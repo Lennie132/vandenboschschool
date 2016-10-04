@@ -1,0 +1,47 @@
+@import "bootstrap/variables.less";
+
+// Scaffolding
+// -------------------------
+@body-bg:               #fff;
+@text-color:            #868686;
+
+/* ==========================================================================
+   1.0 Font styles
+   ========================================================================== */    
+@opensans: 'Open Sans', sans-serif;
+@mavenpro: 'Maven Pro', sans-serif;
+@theme-color: #ff9900; // oranje
+@white-color: #ffffff; // wit
+@black-color: #000000; // zwart
+
+@grey: #b1b1b1;        // grijs
+@darkergrey: #6f6f6e;  // donker grijs
+@lightgrey: #e5e5e5;   // licht grijs
+@lightergrey: #9c9b9b; // lichter grijs
+@red: #e54d42; // rood
+
+@twitter: #55acee;
+@facebook: #3b5998;
+@instagram: #3f729b;
+
+//== Grid system
+//## Define your custom responsive grid.
+//** Number of columns in the grid.
+@grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:         30px;
+
+//== Container sizes
+//## Define the maximum width of `.container` for different screen sizes.
+// Small screen / tablet
+@container-tablet:             (720px + @grid-gutter-width);
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+// Medium screen / desktop
+@container-desktop:            (940px + @grid-gutter-width);
+//** For `@screen-md-min` and up.
+@container-md:                 @container-desktop;
+// Large screen / wide desktop
+@container-large-desktop:      (1140px + @grid-gutter-width);
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;
