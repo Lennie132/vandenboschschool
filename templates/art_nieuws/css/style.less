@@ -1,0 +1,41 @@
+.transition(@transition) {
+    -webkit-transition: @transition;
+    transition: @transition;
+}
+
+
+/* ==========================================================================
+   Nieuwsitems
+   ========================================================================== */
+.news-wrapper{
+    margin:14px 0;
+}
+.newsitem {
+    p.newsitem__date {
+        font-size:14px;
+        line-height:16px;
+        color:#cccccc;
+        margin-bottom:5px;
+    }
+    a.newsitem__read-more, .back-link {
+        position:relative;
+        display:table;
+        margin-top:20px;
+    }
+    [class^="icon-"], [class*=" icon-"] {
+        display:inline-block;
+        vertical-align:middle;
+    }
+}
+.pagination {
+    margin:5px 0;
+    text-align:center;
+}
+
+@media (max-width: 767px) {
+    .newsitem {
+        img {
+            margin:10px auto 10px;
+        }
+    }
+}
