@@ -4,14 +4,34 @@
 @white-color: #fff;
 @black-color: #000;
 
-.main-nav{
-    > li{
-        > a{
-            
+.main-nav {
+  margin: 0;
+    > li {
+      display: inline-block;
+      position: relative;
+      padding: 0 15px;
+        > a {
+          color: @black-color;
+          font-size: 30px;
+          line-height: 34px;
         }
-        &:hover, &:focus{
-            > a{
-                
+
+        &::after {
+          content: "•";
+          position: absolute;
+          font-size: 30px;
+          line-height: 34px;
+          right: -5px;
+        }
+        &:last-child {
+          &::after {
+            content: "";
+          }
+        }
+        &:hover, &:focus {
+            > a {
+              text-decoration: none;
+              font-weight: bold;
             }
         }
     }
@@ -26,9 +46,9 @@
 }
 
 @media (max-width: 991px){
-    
+
 }
 
 @media (max-width: 767px){
-    
+
 }
