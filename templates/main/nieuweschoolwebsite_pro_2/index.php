@@ -2,14 +2,14 @@
 <html class="no-js" lang="<?= Taal::get_current(); ?>">
     <head>
         <title><?php echo lcms::Metatags()->Title()->get(); ?></title>
-		
+
         <base href="<?php echo get_base_href(); ?>/"/>
-		
+
         <?php lcms::FaviconGenerator()->getHTML(); ?>
-		
+
         <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="<?= lcms_client_script::get_main_template_path() ?>/js/jquery-2.2.0.min.js"><\/script>')</script> 
-		
+        <script>window.jQuery || document.write('<script src="<?= lcms_client_script::get_main_template_path() ?>/js/jquery-2.2.0.min.js"><\/script>')</script>
+
         <?php
         /** Webfonts inladen 	* */
         echo lcms::Template()->getWebFonts();
@@ -18,9 +18,9 @@
 
         /** hier wordt alle CSS geplaatst (welke via de lcms_client_script::add_css(); functie wordt geladen) * */
         echo lcms_client_script::include_css();
-		
-        //JAVASCRTIPT WORDT ONDERAAN DE BODY GELADEN. 
-        //Let op! Voor de beste prestatie kan je in je javascript bestanden nu de document ready functie laten vervallen 
+
+        //JAVASCRTIPT WORDT ONDERAAN DE BODY GELADEN.
+        //Let op! Voor de beste prestatie kan je in je javascript bestanden nu de document ready functie laten vervallen
         //omdat alle html element al ingeladen zijn als de javascript geladen wordt
 
         /** Hieronder defineren we een aantal less bestanden die aan ieder ander less bestand moeten worden toegevoegd * */
@@ -53,12 +53,17 @@
         <!--[if lt IE 9]>
                 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-		
-        <?php
-        lcms::Template()->getHeader();
-        lcms::Template()->getContent();
-        lcms::Template()->getFooter();
 
+          <?php
+          lcms::Template()->getHeader();
+          ?>
+          <div class="grid">
+          <?php
+          lcms::Template()->getContent();
+          lcms::Template()->getFooter();
+          ?>
+        </div>
+        <?php
         echo lcms_client_script::include_js();
         ?>
     </body>

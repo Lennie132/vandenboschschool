@@ -1,112 +1,155 @@
 /* ==========================================================================
    1.0 Font styles
-   ========================================================================== */    
+   ========================================================================== */
 @arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+@rajdhani: 'Rajdhani', sans-serif;
 @theme-color: #ff9900; // oranje
 @white-color: #ffffff; // wit
 @black-color: #000000; // zwart
+@achtergrond-color: #eaedb4; // groen/geel
 
+@blue: #0e71b8;
+@pink: #e61873;
+@turquoise: #12a19a;
 /* ==========================================================================
    2.0 Global styles
    ========================================================================== */
-*:focus		{ outline: none; } // outlines uitschakelen
-::selection         { background-color: @theme-color; color: @white-color; }
-::-moz-selection    { background-color: @theme-color; color: @white-color; }
+*:focus {
+    outline: none;
+}
+// outlines uitschakelen
 
+::selection {
+    background-color: @theme-color;
+    color: @white-color;
+}
+
+::-moz-selection {
+    background-color: @theme-color;
+    color: @white-color;
+}
 /* ==========================================================================
    3.0 Typography
    ========================================================================== */
 html {
     font-size: 100%;
 }
+
 body {
-    font-family: @arial;
+    font-family: @rajdhani;
     font-size: 16px;
     color: @text-color;
     line-height: 1.125em;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: @achtergrond-color;
 }
-
 /* ==========================================================================
    x.x Chromeframe
    ========================================================================== */
 .chromeframe {
-    padding: 10px; background: #f5f5f5; color: @text-color; text-align: center;
+    padding: 10px;
+    background: #f5f5f5;
+    color: @text-color;
+    text-align: center;
 }
-
 /* ==========================================================================
    Algemeen
    ========================================================================== */
-a{
-    &:hover, &:focus{
-
-    }
+a {
+    &:focus,
+    &:hover {}
 }
 
-h1, h2, h3, h4, h5, h6{
-
-}
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
 /* ==========================================================================
    Sfeerbeeld
    ========================================================================== */
-.sfeerbeeld{
-
+.content__sfeerbeeld {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
 }
+/* ==========================================================================
+   Titel
+   ========================================================================== */
+.content__titel-wrapper {
+display: block;
+width: 100%;
+padding: 15px;
+background-color: @blue;
+  .content__titel {
+    text-align: center;
+    margin: 0;
+    color: @white-color;
 
+  }
+  &.content__titel-wrapper--overlay {
+    background-color: rgba(14, 113, 184, 0.75);
+    position: absolute;
+    bottom: 0;
+  }
+}
 /* ==========================================================================
    Content
    ========================================================================== */
-.content-wrapper{
+.content {
 
 }
 
+.content__main {
+    background-color: @white-color;
+    padding: 20px;
+}
+
+.content__bottom-bar {
+  background-color: @pink;
+  height: 30px;
+  width: 100%;
+}
 /* ==========================================================================
    Formulier
    ========================================================================== */
-form{
-    .formulier_div{
-        label{
+form {
+    .formulier_div {
+        label {}
 
-        }
-        input, textarea{
+        input,
+        textarea {}
 
-        }
-        textarea{
-
-        }
+        textarea {}
     }
-    .formulier_div_submit{
-        input{
 
-        }
+    .formulier_div_submit {
+        input {}
     }
 }
-
 /* Placeholder */
 ::-webkit-input-placeholder {
-	color: @kleur1;
-}
-:-moz-placeholder {
-	color: @kleur1;
-}
-::-moz-placeholder {
-	color: @kleur1;
-}
-:-ms-input-placeholder {  
-	color: @kleur1;
+    color: @kleur1;
 }
 
+:-moz-placeholder {
+    color: @kleur1;
+}
+
+::-moz-placeholder {
+    color: @kleur1;
+}
+
+:-ms-input-placeholder {
+    color: @kleur1;
+}
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
-@media (max-width: 1199px){
-
-}
-
-@media (max-width: 991px){
-
-}
-
-@media (max-width: 767px){
-
-}
+@media (max-width: 1199px) {}
+@media (max-width: 991px) {}
+@media (max-width: 767px) {}
