@@ -3,9 +3,6 @@
    ========================================================================== */
 @white-color: #fff;
 @black-color: #000;
-@blue: #0e71b8;
-@pink: #e61873;
-@turquoise: #12a19a;
 
 .absolute-center {
     left: 0;
@@ -18,8 +15,7 @@
     transform: translateY(-50%);
 }
 
-.grid {
-}
+.grid {}
 
 .block {
     padding-bottom: 30px;
@@ -36,7 +32,7 @@
         padding: 0;
 
         &.block--blue {
-            background-color: @blue;
+            background-color: @kleur1;
 
             .block__content {
                 background-color: rgba(14, 113, 184, 0.75);
@@ -44,7 +40,7 @@
         }
 
         &.block--pink {
-            background-color: @pink;
+            background-color: @kleur2;
 
             .block__content {
                 background-color: rgba(230, 24, 115, 0.75);
@@ -52,7 +48,7 @@
         }
 
         &.block--turquoise {
-            background-color: @turquoise;
+            background-color: @kleur3;
 
             .block__content {
                 background-color: rgba(18, 161, 154, 0.75);
@@ -63,7 +59,7 @@
             background-color: @white-color;
 
             .block__link-wrapper {
-                color: @turquoise;
+                color: @kleur3;
             }
 
             .block__content {
@@ -86,12 +82,20 @@
     .block__content {
         min-height: 150px;
         position: relative;
+        padding: 20px;
 
         .block__introduction {
             font-weight: bold;
             font-size: 36px;
             line-height: 40px;
             .absolute-center;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 40px;
+            text-align: center;
         }
     }
 
@@ -160,7 +164,7 @@
         }
 
         .block__link {
-            border-top: 2px solid @turquoise;
+            border-top: 2px solid @kleur3;
             display: block;
             padding-top: 10px;
             text-align: center;
