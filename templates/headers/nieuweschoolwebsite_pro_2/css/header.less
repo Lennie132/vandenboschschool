@@ -8,16 +8,43 @@
     padding: 20px 0;
 }
 
+.main-block {
+    padding-bottom: 20px;
+    min-height: 530px;
+
+    .main-block__wrapper {
+        background-color: @white-color;
+        min-height: 500px;
+
+        .main-block__content {
+            position: relative;
+            padding: 25px;
+            height: 100%;
+
+            .main-block__phone-number {
+              font-size: 22px;
+              line-height: 26px;
+              color: @kleur1;
+            }
+            .main-block__logo {
+                img {
+                    margin: 30px auto;
+                }
+            }
+
+            .main-block__footer {
+              display: block;
+                font-size: 18px;
+                line-height: 22px;
+                color: @kleur1;
+                text-align: center;
+            }
+        }
+    }
+}
 /* ==========================================================================
    Header responsive
    ========================================================================== */
-@media (max-width: 1199px) {
-}
-
-@media (max-width: 991px){
-
-}
-
-@media (max-width: 767px){
-
-}
+@media (max-width: 1199px) {}
+@media (max-width: 991px) {}
+@media (max-width: 767px) {}

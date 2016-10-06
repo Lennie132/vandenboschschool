@@ -56,12 +56,10 @@
 
           <?php
           lcms::Template()->getHeader();
-          ?>
-          <div class="grid">
-          <?php
           lcms::Template()->getContent();
           lcms::Template()->getFooter();
           ?>
+          <!-- Hier wordt masonry-grid gesloten. Opening div staat in header->index.php -->
         </div>
         <?php
         echo lcms_client_script::include_js();
