@@ -9,10 +9,7 @@ De interne kolommen zijn de zogenaamde pagina secties. Hierin kan je content blo
 In het voorbeeld hieronder zie je ook hoe je een default sectie kan defineren en hoe je ervoor kan zorgen dat er 'autoblokken' worden aangelegd.
 -->
 <div class="container" lcms-grid="12">Home
-    <div class="row">rij
-        <div class="col-md-12">Slider</div>
-    </div>
     <div class="row">
-        <div class="col-md-12">Content</div>
+        <div class="col-md-12" id="content">Content</div>
     </div>
 </div>
