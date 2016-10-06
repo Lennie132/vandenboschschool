@@ -10,6 +10,6 @@ In het voorbeeld hieronder zie je ook hoe je een default sectie kan defineren en
 -->
 <div class="container" lcms-grid="12">Home
     <div class="row">
-        <div class="col-md-12" id="content">Content</div>
+        <div class="col-md-12" default=true id="content">Content</div>
     </div>
 </div>

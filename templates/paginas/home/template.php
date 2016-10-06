@@ -10,4 +10,8 @@ $sfeer = get_sfeerafbeelding($DATA['page'], 1);
 ?>
 
 
-<?= lcms::Template()->getSectieContent($DATA['page'], 'content'); ?>
+<?php
+echo get_all_content_html();
+
+//echo lcms::Template()->getSectieContent($DATA['page'], 'content');
+?>
