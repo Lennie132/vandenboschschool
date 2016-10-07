@@ -15,288 +15,296 @@ Blokken op home-page
   transform: translateY(-50%);
 }
 
-.grid {}
+.grid {
 
-  .block {
-    padding-bottom: 30px;
+}
 
-    .block__link-wrapper {
-      &:active,
-      &:focus,
-      &:hover {
-        text-decoration: none;
-      }
-    }
+.block {
+  padding-bottom: 30px;
 
-    .block__wrapper {
-      padding: 0;
-
-      &.block--blue {
-        background-color: @kleur1;
-
-        .block__content {
-          background-color: rgba(14, 113, 184, 0.75);
-        }
-      }
-
-      &.block--pink {
-        background-color: @kleur2;
-        .block__content {
-          background-color: rgba(230, 24, 115, 0.75);
-        }
-      }
-
-      &.block--turquoise {
-        background-color: @kleur3;
-
-        .block__content {
-          background-color: rgba(18, 161, 154, 0.75);
-        }
-      }
-
-      &.block--white {
-        background-color: @white-color;
-
-        .block__link-wrapper {
-          color: @kleur3;
-        }
-
-        .block__content {
-          background-color: @white-color;
-        }
-      }
+  .block__link-wrapper {
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
     }
   }
 
-  .block--style-1 {
-    color: @white-color;
+  .block__wrapper {
+    padding: 0;
+
+    &.block--blue {
+      background-color: @kleur1;
+
+      .block__content {
+        background-color: rgba(14, 113, 184, 0.75);
+      }
+    }
+
+    &.block--pink {
+      background-color: @kleur2;
+      .block__content {
+        background-color: rgba(230, 24, 115, 0.75);
+      }
+    }
+
+    &.block--turquoise {
+      background-color: @kleur3;
+
+      .block__content {
+        background-color: rgba(18, 161, 154, 0.75);
+      }
+    }
+
+    &.block--white {
+      background-color: @white-color;
+
+      .block__link-wrapper {
+        color: @kleur3;
+      }
+
+      .block__content {
+        background-color: @white-color;
+      }
+    }
+  }
+}
+
+.block--style-1 {
+  color: @white-color;
+
+  .block__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+  .block__content {
+    min-height: 150px;
+    position: relative;
+    padding: 20px;
+
+    .block__introduction {
+      font-weight: bold;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      .absolute-center;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      text-align: center;
+    }
+  }
+
+  &.block--small {
+    min-height: 115px;
 
     .block__image {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 100%;
+      height: 295px;
     }
 
     .block__content {
       min-height: 150px;
-      position: relative;
-      padding: 20px;
-
-      .block__introduction {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 40px;
-        .absolute-center;
-      }
-
-      h2 {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 40px;
-        text-align: center;
-      }
-    }
-
-    &.block--small {
-      min-height: 115px;
-
-      .block__image {
-        height: 295px;
-      }
-
-      .block__content {
-        min-height: 150px;
-      }
-    }
-
-    &.block--middle {
-      min-height: 445px;
-
-      .block__image {
-        height: 295px;
-      }
-
-      .block__content {
-        min-height: 150px;
-      }
-    }
-
-    &.block--large {
-      min-height: 520px;
-
-      .block__image {
-        height: 405px;
-      }
-
-      .block__content {
-        min-height: 150px;
-      }
     }
   }
 
-  .block--style-2 {
-    color: @black-color;
-
-    .block__content {
-      padding: 20px;
-      text-align: center;
-
-      .block__icon {
-        padding: 10px;
-      }
-
-      .block__title {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 40px;
-        text-align: center;
-        padding-bottom: 20px;
-      }
-
-      .block__introduction {
-        color: @black-color;
-        text-align: center;
-        font-size: 20px;
-        line-height: 24px;
-        padding-bottom: 25px;
-      }
-
-      .block__link {
-        border-top: 2px solid @kleur3;
-        display: block;
-        padding-top: 10px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 24px;
-      }
-    }
-
-    &.block--small {
-      min-height: 115px;
-    }
-
-    &.block--middle {
-      min-height: 335px;
-    }
-
-    &.block--large {
-      //min-height: 830px;
-    }
-  }
-
-  .block--style-3 {
-    color: @white-color;
-    position: relative;
+  &.block--middle {
+    min-height: 445px;
 
     .block__image {
-      position: absolute;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100%;
+      height: 295px;
     }
 
     .block__content {
-      position: absolute;
-      padding: 20px;
-      bottom: 0;
-      width: 100%;
-
-      .block__title {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 40px;
-        text-align: center;
-        padding-bottom: 20px;
-      }
-
-      .block__introduction {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 40px;
-        .absolute-center;
-      }
-
-      .block__link {
-        text-align: center;
-        font-weight: bold;
-      }
-    }
-
-    &.block--small {
-      height: 115px;
-
-      .block__content {
-        min-height: 150px;
-      }
-    }
-
-    &.block--middle {
-      height: 445px;
-
-      .block__content {
-        min-height: 150px;
-      }
-    }
-
-    &.block--large {
-      height: 520px;
-
-      .block__content {
-        min-height: 150px;
-      }
+      min-height: 150px;
     }
   }
 
-  .block--style-4 {
-    color: @white-color;
-    padding: 10px;
+  &.block--large {
+    min-height: 520px;
+
+    .block__image {
+      height: 405px;
+    }
 
     .block__content {
-      padding: 20px;
-      height: 150px;
-
-      .block__title {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 40px;
-        text-align: center;
-        padding-bottom: 20px;
-      }
-
-      .block__introduction {
-        text-align: center;
-        font-size: 20px;
-        line-height: 24px;
-        padding-bottom: 25px;
-      }
-
-      .block__link {
-        text-align: center;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 24px;
-      }
-    }
-
-    &.block--small {
-      min-height: 115px;
-    }
-
-    &.block--middle {
-      min-height: 335px;
-    }
-
-    &.block--large {
-      min-height: 430px;
+      min-height: 150px;
     }
   }
-  /* ==========================================================================
-  <Module naam> responsive
-  ========================================================================== */
-  @media (max-width: 1199px) {}
-    @media (max-width: 991px) {}
-      @media (max-width: 767px) {}
+}
+
+.block--style-2 {
+  color: @black-color;
+
+  .block__content {
+    padding: 20px;
+    text-align: center;
+
+    .block__icon {
+      padding: 10px;
+    }
+
+    .block__title {
+      font-weight: bold;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .block__introduction {
+      color: @black-color;
+      text-align: center;
+      font-size: 20px;
+      line-height: 24px;
+      padding-bottom: 25px;
+    }
+
+    .block__link {
+      border-top: 2px solid @kleur3;
+      display: block;
+      padding-top: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &.block--small {
+    min-height: 115px;
+  }
+
+  &.block--middle {
+    min-height: 335px;
+  }
+
+  &.block--large {
+    //min-height: 830px;
+  }
+}
+
+.block--style-3 {
+  color: @white-color;
+  position: relative;
+
+  .block__image {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+
+  .block__content {
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+
+    .block__title {
+      font-weight: bold;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .block__introduction {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 40px;
+      .absolute-center;
+    }
+
+    .block__link {
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  &.block--small {
+    height: 115px;
+
+    .block__content {
+      min-height: 150px;
+    }
+  }
+
+  &.block--middle {
+    height: 445px;
+
+    .block__content {
+      min-height: 150px;
+    }
+  }
+
+  &.block--large {
+    height: 520px;
+
+    .block__content {
+      min-height: 150px;
+    }
+  }
+}
+
+.block--style-4 {
+  color: @white-color;
+  padding: 10px;
+
+  .block__content {
+    padding: 20px;
+    height: 150px;
+
+    .block__title {
+      font-weight: bold;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .block__introduction {
+      text-align: center;
+      font-size: 20px;
+      line-height: 24px;
+      padding-bottom: 25px;
+    }
+
+    .block__link {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &.block--small {
+    min-height: 115px;
+  }
+
+  &.block--middle {
+    min-height: 335px;
+  }
+
+  &.block--large {
+    min-height: 430px;
+  }
+}
+/* ==========================================================================
+<Module naam> responsive
+========================================================================== */
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {
+
+}
+@media (max-width: 767px) {
+
+}
