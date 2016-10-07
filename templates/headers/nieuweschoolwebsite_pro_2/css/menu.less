@@ -4,18 +4,24 @@ Menu
 @white-color: #fff;
 @black-color: #000;
 
-.main-nav {
+.menu {
   margin: 0;
+  display: inline-block;
 
   > li {
     display: inline-block;
     position: relative;
     padding: 0 15px;
+    .transition(all 0.3s);
+    transition: all 0.3s;
 
     > a {
       color: @black-color;
       font-size: 30px;
       line-height: 34px;
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+      }
     }
 
     &::after {
@@ -83,6 +89,92 @@ Menu
         }
       }
     }
+  }
+  &.menu--responsive {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: @kleur4;
+    z-index: 50;
+    > li {
+      display: block;
+      padding: 7px 30px;
+      border-top: 2px solid @kleur1;
+      &:last-child {
+          border-bottom: 2px solid @kleur1;
+      }
+      > a {
+        display: block;
+        color: @black-color;
+        &:hover, &:focus, &active {
+          text-decoration: none;
+        }
+      }
+      &:hover, &:focus, &active {
+        > ul {
+          display: none;
+        }
+      }
+
+      &::before {
+        content: "•";
+        position: absolute;
+        font-size: 30px;
+        line-height: 34px;
+        left: 15px;
+      }
+      &::after {
+        content: "";
+      }
+      &.isparent {
+        > a {
+          &:after {
+            font-family: 'icomoon' !important;
+            content: "\f0d7";
+            position: absolute;
+            right: 20px;
+            font-size: 22px;
+            line-height: 38px;
+          }
+        }
+      }
+      &.isparent.is-open-1 {
+        > a {
+          &:after {
+            transform: rotate(180deg);
+          }
+        }
+        > ul {
+          display: block;
+          position: static;
+          list-style: none;
+          > li {
+            padding: 5px 0;
+            border: none;
+            > a {
+              font-size: 22px;
+              line-height: 26px;
+              display: block;
+            }
+            &:hover, &:focus {
+              > a {
+                font-weight: bold;
+                text-decoration: underline;
+              }
+            }
+            &.active {
+              > a {
+                font-weight: bold;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.menu--open {
+    display: block;
   }
 }
 /* ==========================================================================

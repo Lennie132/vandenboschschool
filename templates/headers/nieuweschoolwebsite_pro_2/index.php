@@ -1,12 +1,16 @@
 <?php
 lcms_client_script::add_header_css('/css/header.less');
 lcms_client_script::add_header_css('/css/menu.less');
+lcms_client_script::add_header_js('/js/main.js');
 ?>
 
 <header>
   <div class="header-wrapper">
     <?php  //lcms::Menu()->setNiveausDiep(2)->setClass('main-nav list-unstyled')->getHTML(); ?>
-    <?= get_menu(0, '', 'main-nav list-unstyled'); ?>
+    <div class="menu-button">
+      <span class="icon-menu"></span>
+    </div>
+    <?= get_menu(0, '', 'menu list-unstyled'); ?>
   </div>
 </header>
 
