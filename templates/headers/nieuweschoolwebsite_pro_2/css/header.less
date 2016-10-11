@@ -3,10 +3,18 @@ Header
 ========================================================================== */
 @white-color: #fff;
 @black-color: #000;
+header {
+  height: 74px;
+}
 
 .header-wrapper {
+  position: fixed;
   padding: 20px 0;
+  z-index: 100;
+  width: 100%;
+  background-color: @kleur4;
   &.header-wrapper--responsive {
+    position: static;
     padding: 0;
     margin: 0 0 10px 0;
     border-bottom: 2px solid @kleur1;
@@ -48,7 +56,7 @@ Header
         overflow: auto;
         .main-block__phone-number {
           display: inline-block;
-          font-size: 22px;
+          font-size: 1.6em;
           line-height: 26px;
           color: @kleur1;
         }
@@ -67,7 +75,7 @@ Header
             .main-block__search-input {
               margin-left: 25px;
               width: auto;
-              max-width: 170px;
+              max-width: 100px;
               border: none;
               font-size: 16px;
               line-height: 20px;
@@ -97,6 +105,12 @@ Header
 /* ==========================================================================
 Header responsive
 ========================================================================== */
-@media (max-width: 1199px) {}
-  @media (max-width: 991px) {}
-    @media (max-width: 767px) {}
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {
+
+}
+@media (max-width: 767px) {
+
+}
