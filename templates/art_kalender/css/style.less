@@ -1,0 +1,159 @@
+.transition(@transition) {
+  -webkit-transition: @transition;
+  transition: @transition;
+}
+
+@white-color: #fff;
+@black-color: #000;
+
+
+/* ==========================================================================
+Kalender
+========================================================================== */
+
+.calendar-wrapper{
+  //margin:14px 0;
+  margin:20px 0 20px;
+  h3{
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
+
+.table-wrapper{
+  text-align:center;
+}
+
+table.calender{
+  width: 100%;
+  max-width:700px;
+  border: 1px solid @kleur1;
+  margin:0 auto;
+  thead{
+    th{
+      font-weight: bold;
+      color: white;
+      background-color:@kleur1;
+      width: ~"calc(100% / 7)"; //14.28%
+      text-shadow:0px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
+  tbody{
+    td{
+      height: 80px;
+      border: 1px solid #e5e5e5;
+      font-size: 14px;
+      text-align: left;
+      vertical-align: top;
+      padding: 2px;
+      line-height: 15px;
+      &.disabled{
+        color: #e5e5e5;
+      }
+      &.today{
+        background:#eeeeee;
+        .day{
+          color:@kleur1;
+          font-weight:bold;
+          text-decoration:underline;
+        }
+      }
+      &:hover{
+        background-color:#eeeeee;
+        color:@kleur1;
+      }
+    }
+    .agenda-bullit {
+      // Naam onbekend
+      /* width: 20%;
+      float: left; */
+      // Normaal
+      width:100%;
+      float:none;
+      height: 18px;
+      line-height:18px;
+      padding:0 5px;
+      color:#ffffff;
+      background:@kleur1;
+      font-weight:bold;
+      position: relative;
+      margin: 2px 2px 0 0;
+      border-radius: 2px;
+      overflow:hidden;
+      text-shadow:0px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.calender-tools{
+  text-align:center;
+  .switch{
+    font-size:24px;
+    color:#868686;
+    text-decoration:none;
+    -webkit-transition:all .3s;
+    transition:all .3s;
+    &:hover{
+      color:#000000;
+    }
+  }
+  .submit{
+    padding:5px 20px;
+    font-size:20px;
+    color:#868686;
+    text-transform:uppercase;
+    text-decoration:none;
+    -webkit-transition:all .3s;
+    transition:all .3s;
+    &:hover{
+      color:#000000;
+    }
+  }
+}
+
+.calendar-item{
+  .icon-dates{
+    color:@kleur1;
+    font-size:70px;
+    float:left;
+    margin-right:10px;
+  }
+  .inner-item{
+    margin:15px 0;
+  }
+  a .back-link{
+    position:relative;
+    display:table;
+    margin-top:20px;
+  }
+}
+
+@media (max-width: 767px){
+  table.calender{
+    tbody{
+      td{
+        height:60px;
+      }
+      .agenda-bullit{
+        float:left;
+        width:20%;
+      }
+    }
+  }
+  .responsive-calendar{
+    margin-top:15px;
+    .mini-link{
+      margin-bottom:10px;
+    }
+    p.responsive-date{
+      font-weight:bold;
+      line-height:17px;
+      margin:0;
+    }
+  }
+}
