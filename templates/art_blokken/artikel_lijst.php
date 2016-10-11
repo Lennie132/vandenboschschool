@@ -79,73 +79,79 @@ if (!empty($art_arr)) {
         // Icon en tekst
         ?>
         <div class="block grid-item <?= $col; ?> ">
-          <a class="block__link-wrapper" href="<?= link::c($artikel['link']); ?>">
-            <div class="block__wrapper block--style-2 <?= $height; ?> block--white">
+          <div class="block__wrapper block--style-2 <?= $height; ?> block--white">
+            <div class="block__content">
 
-              <div class="block__content">
+              <a class="block__link-wrapper" href="<?= link::c($artikel['link']); ?>">
                 <?php if ($icon != '') { ?>
                   <img class="block__icon" src="<?php echo lcms::resize($icon, 60, 60, '', 80); ?>" title="<?= $artikel['titel']; ?>">
                   <?php } ?>
                   <h2 class="block__title"><?= $artikel['titel']; ?></h2>
+                </a>
+
+                <?php if ($artikel['module_invoegen'] != '') {
+                  include  $artikel['module_invoegen'];
+                } else { ?>
                   <p class="block__introduction"><?= $artikel['tekst']; ?></p>
-                  <p class="block__link"><?= $artikel['link_naam']; ?></p>
+                  <?php } ?>
+                  <a class="block__link" href="<?= link::c($artikel['link']); ?>"><?= $artikel['link_naam']; ?></a>
                 </div>
               </div>
 
-            </a>
-          </div>
-          <?php
-          break;
+
+            </div>
+            <?php
+            break;
 
 
-          case 3:
-          // Afbeelding en transparant tekst
-          ?>
-          <div class="block grid-item <?= $col; ?> ">
-            <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
-              <div class="block__wrapper block--style-3 <?= $height; ?> <?= $colour; ?>">
-                <div class="block__image" style="background-image: url('<?php echo lcms::resize($img, 800, 800, '', 80); ?>');"></div>
-                <div class="block__content">
-                  <div class="block__title">
-                    <?= $artikel['tekst']; ?>
-                  </div>
-                  <div class="block__link">
-                    <?= $artikel['link_naam']; ?>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <?php
-          break;
-
-
-          case 4:
-          // Tekst
-          ?>
-          <div class="block grid-item <?= $col; ?> ">
-            <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
-              <div class="block__wrapper block--style-4 <?= $height; ?> <?= $colour; ?>">
-                <div class="block__content">
-                  <div class="block__title">
-                    <?= $artikel['titel']; ?>
-                  </div>
-                  <p class="block__introduction">
-                    <?= $artikel['tekst']; ?>
-                  </p>
-                  <div class="block__link">
-                    <?= $artikel['link_naam']; ?>
+            case 3:
+            // Afbeelding en transparant tekst
+            ?>
+            <div class="block grid-item <?= $col; ?> ">
+              <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
+                <div class="block__wrapper block--style-3 <?= $height; ?> <?= $colour; ?>">
+                  <div class="block__image" style="background-image: url('<?php echo lcms::resize($img, 800, 800, '', 80); ?>');"></div>
+                  <div class="block__content">
+                    <div class="block__title">
+                      <?= $artikel['tekst']; ?>
+                    </div>
+                    <div class="block__link">
+                      <?= $artikel['link_naam']; ?>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <?php
-          break;
+              </a>
+            </div>
+            <?php
+            break;
 
-          default:
-          break;
+
+            case 4:
+            // Tekst
+            ?>
+            <div class="block grid-item <?= $col; ?> ">
+              <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
+                <div class="block__wrapper block--style-4 <?= $height; ?> <?= $colour; ?>">
+                  <div class="block__content">
+                    <div class="block__title">
+                      <?= $artikel['titel']; ?>
+                    </div>
+                    <p class="block__introduction">
+                      <?= $artikel['tekst']; ?>
+                    </p>
+                    <div class="block__link">
+                      <?= $artikel['link_naam']; ?>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <?php
+            break;
+
+            default:
+            break;
+          }
         }
       }
-    }
-    ?>
+      ?>

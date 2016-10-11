@@ -1,6 +1,6 @@
 /* ==========================================================================
-   1.0 Font styles
-   ========================================================================== */
+1.0 Font styles
+========================================================================== */
 @arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
 @rajdhani: 'Rajdhani', sans-serif;
 @theme-color: #ff9900; // oranje
@@ -8,156 +8,203 @@
 @black-color: #000000; // zwart
 
 /* ==========================================================================
-   2.0 Global styles
-   ========================================================================== */
+2.0 Global styles
+========================================================================== */
 *:focus {
-    outline: none;
+  outline: none;
 }
 // outlines uitschakelen
 
 ::selection {
-    background-color: @theme-color;
-    color: @white-color;
+  background-color: @theme-color;
+  color: @white-color;
 }
 
 ::-moz-selection {
-    background-color: @theme-color;
-    color: @white-color;
+  background-color: @theme-color;
+  color: @white-color;
 }
 /* ==========================================================================
-   3.0 Typography
-   ========================================================================== */
+3.0 Typography
+========================================================================== */
 html {
+  font-size: 62.5%;
+  @media (max-width: 1670px) {
+    font-size: 50%;
+  }
+  @media (max-width: 1415px) {
+    font-size: 40%;
+  }
+  @media (max-width: 1199px) {
     font-size: 62.5%;
-    @media (max-width: 1670px) {
-      font-size: 50%;
-    }
-    @media (max-width: 1415px) {
-      font-size: 40%;
-    }
-    @media (max-width: 1199px) {
-      font-size: 62.5%;
-    }
-    @media (max-width: 500px) {
-      font-size: 52.5%;
-    }
+  }
+  @media (max-width: 500px) {
+    font-size: 52.5%;
+  }
 }
 
 body {
-    font-family: @rajdhani;
-    font-size: 1.6rem;
-    color: @text-color;
-    line-height: 2rem;
-    max-width: 1920px;
-    margin: 0 auto;
-    background-color: @kleur4;
+  font-family: @rajdhani;
+  font-size: 1.6rem;
+  color: @text-color;
+  line-height: 2rem;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: @kleur4;
 }
 /* ==========================================================================
-   x.x Chromeframe
-   ========================================================================== */
+x.x Chromeframe
+========================================================================== */
 .chromeframe {
-    padding: 10px;
-    background: #f5f5f5;
-    color: @text-color;
-    text-align: center;
+  padding: 10px;
+  background: #f5f5f5;
+  color: @text-color;
+  text-align: center;
 }
 /* ==========================================================================
-   Algemeen
-   ========================================================================== */
+Algemeen
+========================================================================== */
 a {
-    &:focus,
-    &:hover {}
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {}
-/* ==========================================================================
-   Sfeerbeeld
-   ========================================================================== */
-.content__sfeerbeeld {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-}
-/* ==========================================================================
-   Titel
-   ========================================================================== */
-.content__titel-wrapper {
-display: block;
-width: 100%;
-padding: 15px;
-background-color: @kleur1;
-  .content__titel {
-    text-align: center;
-    margin: 0;
-    color: @white-color;
-
+  &:focus,
+  &:hover {}
   }
-  &.content__titel-wrapper--overlay {
-    background-color: rgba(14, 113, 184, 0.75);
-    position: absolute;
-    bottom: 0;
-  }
-}
-/* ==========================================================================
-   Content
-   ========================================================================== */
-.content {
 
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {}
+    /* ==========================================================================
+    Sfeerbeeld
+    ========================================================================== */
+    .content__sfeerbeeld {
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+    }
+    /* ==========================================================================
+    Titel
+    ========================================================================== */
+    .content__titel-wrapper {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: @kleur1;
+      .content__titel {
+        text-align: center;
+        margin: 0;
+        color: @white-color;
 
-.content__main {
-    background-color: @white-color;
-    padding: 20px;
-}
+      }
+      &.content__titel-wrapper--overlay {
+        background-color: rgba(14, 113, 184, 0.75);
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    /* ==========================================================================
+    Content
+    ========================================================================== */
+    .content {
+      font-size: 18px;
+      line-height: 22px;
+    }
 
-.content__bottom-bar {
-  background-color: @kleur2;
-  height: 30px;
-  width: 100%;
-}
-/* ==========================================================================
-   Formulier
-   ========================================================================== */
-form {
-    .formulier_div {
+    .content__main {
+      background-color: @white-color;
+      padding: 20px;
+    }
+
+    .content__bottom-bar {
+      background-color: @kleur2;
+      height: 30px;
+      width: 100%;
+    }
+
+    /* ==========================================================================
+    Kalender Home
+    ========================================================================== */
+    .kalenderitem--home {
+      text-align: left;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 20px;
+      .kalenderitem__datum {
+        font-weight: bold;
+        color: @black-color;
+      }
+      .kalenderitem__tijd {
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      .kalenderitem__titel {
+        color: @black-color;
+      }
+    }
+
+    /* ==========================================================================
+    Nieuws Home
+    ========================================================================== */
+    .newsitem__wrapper--home {
+      text-align: left;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 25px;
+      .newsitem__title {
+        font-weight: bold;
+        color: @black-color;
+      }
+      .newsitem__intro {
+        height: 72px;
+        .newsitem__paragraph {
+          line-height: 24px;
+        }
+        .newsitem__read-more {
+          font-weight: bold;
+          color: @black-color;
+        }
+      }
+    }
+
+    /* ==========================================================================
+    Formulier
+    ========================================================================== */
+    form {
+      .formulier_div {
         label {}
 
-        input,
-        textarea {}
+          input,
+          textarea {}
 
-        textarea {}
-    }
+            textarea {}
+            }
 
-    .formulier_div_submit {
-        input {}
-    }
-}
-/* Placeholder */
-::-webkit-input-placeholder {
-    color: @kleur1;
-}
+            .formulier_div_submit {
+              input {}
+              }
+            }
+            /* Placeholder */
+            ::-webkit-input-placeholder {
+              color: @kleur1;
+            }
 
-:-moz-placeholder {
-    color: @kleur1;
-}
+            :-moz-placeholder {
+              color: @kleur1;
+            }
 
-::-moz-placeholder {
-    color: @kleur1;
-}
+            ::-moz-placeholder {
+              color: @kleur1;
+            }
 
-:-ms-input-placeholder {
-    color: @kleur1;
-}
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
-@media (max-width: 1199px) {}
-@media (max-width: 991px) {}
-@media (max-width: 767px) {}
+            :-ms-input-placeholder {
+              color: @kleur1;
+            }
+            /* ==========================================================================
+            RESPONSIVE
+            ========================================================================== */
+            @media (max-width: 1199px) {}
+              @media (max-width: 991px) {}
+                @media (max-width: 767px) {}

@@ -11,5 +11,10 @@ $(document).ready(function(){
       columnWidth: '.grid-sizer',
       percentPosition: true
     });
+
+    $('.newsitem__intro').dotdotdot({
+      watch: "window",
+      after: "a.newsitem__read-more"
+    });
   });
 });
