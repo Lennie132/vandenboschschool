@@ -13,20 +13,23 @@ $config = array(
     'bestand_veld' => 'Bestand'
 );
 
+smart_include_css('css/style.less');
+
 $artikel = get_artikelen_arr($config['tabelnaam'], $config['group_id'], $config['order'], $DATA['artikel_id']);
 //print_pre($artikel, $DATA);
 
 if (!empty($artikel)) {
     $img = get_art_file_path($artikel['afbeelding']['DATA'], $DATA['artikel_id']);
     ?>
-    <div class="detail-persoon">
+    <div class="team-member--detail">
         <div class="row">
             <div class="col-xs-12">
-                <div class="teruglink">
-                    <a href="<?= link::v('page_team'); ?>"><span class="swm-pijl-links"></span> <?= get_vertaling('terug'); ?></a>
+                <div class="team-member__link">
+                    <a href="<?= link::v('page_team'); ?>"><span class="icon-chevron_left"></span> <?= get_vertaling('terug'); ?></a>
                 </div>
             </div>
         </div>
+        <br/>
         <div class="row">
             <?php
             if (trim($artikel['afbeelding']['DATA'] != '')) {
@@ -38,16 +41,16 @@ if (!empty($artikel)) {
             }
             ?>
             <div class="<?= trim($artikel['afbeelding']['DATA'] != '') ? 'col-md-9 col-sm-8' : 'col-xs-12'; ?>">
-                <h2><?= $artikel['naam']['DATA']; ?></h2>
-                <p class="team-function"><?= $artikel['functie']['DATA']; ?></p>
+                <h2 class="team-member__name"><?= $artikel['naam']['DATA']; ?></h2>
+                <p class="team-member__function"><?= $artikel['functie']['DATA']; ?></p>
                 <?php if ($artikel['email']['DATA'] != '') { ?>
-                    <p><a href="mailto:<?= $artikel['email']['DATA']; ?>"><span class="swm-email"></span>&nbsp;<?= $artikel['email']['DATA']; ?></a></p>
+                    <p><a class="team-member__email" href="mailto:<?= $artikel['email']['DATA']; ?>"><span class="icon-email"></span>&nbsp;<?= $artikel['email']['DATA']; ?></a></p>
                 <?php } ?>
                 <?php if ($artikel['telefoon']['DATA'] != '') { ?>
-                    <p><a href="tel:<?= $artikel['telefoon']['DATA']; ?>"><span class="swm-telefoon"></span>&nbsp;<?= $artikel['telefoon']['DATA']; ?></a></p>
+                    <p><a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']['DATA']; ?>"><span class="icon-phone"></span>&nbsp;<?= $artikel['telefoon']['DATA']; ?></a></p>
                 <?php } ?>
                 <br/>
-                <p><?= $artikel['omschrijving']['DATA']; ?></p>
+                <p class="team-member__description"><?= $artikel['omschrijving']['DATA']; ?></p>
             </div>
         </div>
     </div>

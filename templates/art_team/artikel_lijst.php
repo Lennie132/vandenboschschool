@@ -10,6 +10,7 @@ $config = array(
 
 /* Artikelen ophalen */
 smart_include_css('css/style.less');
+smart_include_js('main.js');
 
 /* if ($DATA['page'] == get_variabele('page_home')) {
 $limiet = 7;
@@ -34,28 +35,27 @@ if (!empty($art_arr)) {  ?>
         <div class="col-md-4 col-sm-6 col-xs-12">
           <!-- Team Member -->
           <div class="team-member" style="background-image:url('<?php echo lcms::resize($afbeelding, 300, null, "300x300"); ?>');">
-            <div class="team-overflow has-animation" data-animation="fade-in" data-delay="300">
-              <div class="team-info">
+            <div class="team-member__overflow team-member--has-animation" data-animation="fade-in" data-delay="300">
+              <div class="team-member__info">
                 <a href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= $artikel['naam']; ?>">
-                  <h4 class="team-name"><?php echo $artikel["naam"]; ?></h4>
-                  <p class="team-function"><?php echo $artikel["functie"]; ?></p>
+                  <h4 class="team-member__name"><?php echo $artikel["naam"]; ?></h4>
+                  <p class="team-member__function"><?php echo $artikel["functie"]; ?></p>
                 </a>
-                <p class="team-description"><?php echo $artikel["omschrijving"]; ?></p>
-                <?php if ($artikel['telefoon'] != '') { ?>
-                  <a href="tel:<?= $artikel['telefoon']; ?>" title="<?= $artikel['telefoon']; ?>">
-                    <span class="swm-telefoon"></span> <?= $artikel['telefoon']; ?>
+                <p class="team-member__description"><?php echo $artikel["omschrijving"]; ?></p>
+                <?php if ($artikel['email'] != '') { ?>
+                  <a class="team-member__email" href="mailto:<?= $artikel['email']; ?>" title="<?= $artikel['email']; ?>">
+                    <span class="icon-email"></span> <?= $artikel['email']; ?>
                   </a>
                   <br/>
                   <?php } ?>
-                  <?php if ($artikel['email'] != '') { ?>
-                    <a href="mailto:<?= $artikel['email']; ?>" title="<?= $artikel['email']; ?>">
-                      <span class="swm-email"></span>
+                  <?php if ($artikel['telefoon'] != '') { ?>
+                    <a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']; ?>" title="<?= $artikel['telefoon']; ?>">
+                      <span class="icon-phone"></span> <?= $artikel['telefoon']; ?>
                     </a>
-                    &nbsp;
                     <?php } ?>
                     <br/>
-                    <a href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= get_vertaling('lees_meer'); ?>">
-                      <?= get_vertaling('lees_meer'); ?>
+                    <a class="team-member__link" href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= get_vertaling('lees_meer'); ?>">
+                      <?= get_vertaling('lees_meer'); ?> <span class="icon-chevron_right"></span>
                     </a>
                   </div>
                 </div>
