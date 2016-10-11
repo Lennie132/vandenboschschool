@@ -82,6 +82,7 @@ Blokken op home-page
 
   .block__content {
     min-height: 150px;
+    height: auto;
     position: relative;
     padding: 20px;
 
@@ -89,7 +90,9 @@ Blokken op home-page
       font-weight: bold;
       font-size: 3.6rem;
       line-height: 4rem;
-      .absolute-center;
+      a {
+        color: @white-color;
+      }
     }
 
     h2 {
@@ -99,40 +102,42 @@ Blokken op home-page
       text-align: center;
     }
   }
-
   &.block--small {
     min-height: 115px;
 
     .block__image {
       height: 295px;
     }
-
     .block__content {
       min-height: 150px;
+      .block__introduction {
+        .absolute-center;
+      }
     }
   }
-
   &.block--middle {
     min-height: 445px;
 
     .block__image {
       height: 295px;
     }
-
     .block__content {
       min-height: 150px;
+      .block__introduction {
+        .absolute-center;
+      }
     }
   }
-
   &.block--large {
     min-height: 520px;
-
     .block__image {
       height: 405px;
     }
-
     .block__content {
-      min-height: 150px;
+      min-height: auto;
+      .block__introduction {
+        text-align: center;
+      }
     }
   }
 }
@@ -172,6 +177,15 @@ Blokken op home-page
       font-weight: bold;
       font-size: 20px;
       line-height: 24px;
+      color: @kleur3;
+      span {
+        &::before {
+          display: inline-block;
+          font-size: 18px;
+          line-height: 23px;
+          vertical-align: bottom;
+        }
+      }
     }
   }
 
@@ -225,6 +239,18 @@ Blokken op home-page
     .block__link {
       text-align: center;
       font-weight: bold;
+      a {
+        color: @white-color;
+        span {
+          &::before {
+            display: inline-block;
+            font-size: 18px;
+            line-height: 23px;
+            vertical-align: bottom;
+          }
+        }
+      }
+
     }
   }
 
@@ -262,11 +288,13 @@ Blokken op home-page
     height: 150px;
 
     .block__title {
+      display: block;
       font-weight: bold;
       font-size: 3.6rem;
       line-height: 4rem;
       text-align: center;
       padding-bottom: 20px;
+      color: @white-color;
     }
 
     .block__introduction {
@@ -277,10 +305,20 @@ Blokken op home-page
     }
 
     .block__link {
+      display: block;
       text-align: center;
       font-weight: bold;
       font-size: 20px;
       line-height: 24px;
+      color: @white-color;
+      span {
+        &::before {
+          display: inline-block;
+          font-size: 18px;
+          line-height: 23px;
+          vertical-align: bottom;
+        }
+      }
     }
   }
 

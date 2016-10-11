@@ -55,7 +55,7 @@ if (!empty($art_arr)) {  ?>
                     <?php } ?>
                     <br/>
                     <a class="team-member__link" href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= get_vertaling('lees_meer'); ?>">
-                      <?= get_vertaling('lees_meer'); ?> <span class="icon-chevron_right"></span>
+                      <?= get_vertaling('lees_meer'); ?><span class="icon-chevron_right"></span>
                     </a>
                   </div>
                 </div>

@@ -63,13 +63,14 @@ if (!empty($art_arr)) {
             <?php if ($img != '') { ?>
               <div class="block__image" style="background-image: url('<?php echo lcms::resize($img, 800, 800, '', 80); ?>');"></div>
               <?php } ?>
-              <div class="block__content">
-                <p class="block__introduction">
-                  <?= $artikel['tekst']; ?>
-                </p>
+            </a>
+            <div class="block__content">
+              <div class="block__introduction">
+                <?= $artikel['tekst']; ?>
               </div>
             </div>
-          </a>
+          </div>
+
         </div>
         <?php
         break;
@@ -94,7 +95,7 @@ if (!empty($art_arr)) {
                 } else { ?>
                   <p class="block__introduction"><?= $artikel['tekst']; ?></p>
                   <?php } ?>
-                  <a class="block__link" href="<?= link::c($artikel['link']); ?>"><?= $artikel['link_naam']; ?></a>
+                  <a class="block__link" href="<?= link::c($artikel['link']); ?>"><?= $artikel['link_naam']; ?><span class="icon-chevron_right"></span></a>
                 </div>
               </div>
 
@@ -108,50 +109,54 @@ if (!empty($art_arr)) {
             // Afbeelding en transparant tekst
             ?>
             <div class="block grid-item <?= $col; ?> ">
-              <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
-                <div class="block__wrapper block--style-3 <?= $height; ?> <?= $colour; ?>">
+              <div class="block__wrapper block--style-3 <?= $height; ?> <?= $colour; ?>">
+                <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
                   <div class="block__image" style="background-image: url('<?php echo lcms::resize($img, 800, 800, '', 80); ?>');"></div>
-                  <div class="block__content">
-                    <div class="block__title">
-                      <?= $artikel['tekst']; ?>
-                    </div>
+                </a>
+                <div class="block__content">
+                  <div class="block__title">
+                    <?= $artikel['tekst']; ?>
+                  </div>
+                  <?php if ($artikel['link_naam'] != '') { ?>
                     <div class="block__link">
-                      <?= $artikel['link_naam']; ?>
+                      <a href="<?php link::c($artikel['link']); ?>"><?= $artikel['link_naam']; ?><span class="icon-chevron_right"></span></a>
                     </div>
+                    <?php } ?>
                   </div>
                 </div>
-              </a>
-            </div>
-            <?php
-            break;
+              </div>
+              <?php
+              break;
 
 
-            case 4:
-            // Tekst
-            ?>
-            <div class="block grid-item <?= $col; ?> ">
-              <a class="block__link-wrapper" href="<?php link::c($artikel['link']); ?>">
+              case 4:
+              // Tekst
+              ?>
+              <div class="block grid-item <?= $col; ?> ">
+
                 <div class="block__wrapper block--style-4 <?= $height; ?> <?= $colour; ?>">
                   <div class="block__content">
-                    <div class="block__title">
-                      <?= $artikel['titel']; ?>
-                    </div>
+                    <a class="block__title" href="<?php link::c($artikel['link']); ?>">
+                        <?= $artikel['titel']; ?>
+                    </a>
                     <p class="block__introduction">
                       <?= $artikel['tekst']; ?>
                     </p>
-                    <div class="block__link">
-                      <?= $artikel['link_naam']; ?>
-                    </div>
+                    <?php if ($artikel['link_naam'] != '') { ?>
+                    <a class="block__link" href="<?php link::c($artikel['link']); ?>">
+                      <?= $artikel['link_naam']; ?><span class="icon-chevron_right"></span>
+                    </a>
+                    <?php } ?>
                   </div>
                 </div>
-              </a>
-            </div>
-            <?php
-            break;
 
-            default:
-            break;
+              </div>
+              <?php
+              break;
+
+              default:
+              break;
+            }
           }
         }
-      }
-      ?>
+        ?>

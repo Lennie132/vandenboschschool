@@ -111,6 +111,7 @@ a {
     .content {
       font-size: 18px;
       line-height: 22px;
+          margin-bottom: 30px;
     }
 
     .content__main {
@@ -165,6 +166,14 @@ a {
         .newsitem__read-more {
           font-weight: bold;
           color: @black-color;
+          span {
+            &::before {
+              display: inline-block;
+              font-size: 17px;
+              line-height: 24px;
+              vertical-align: top;
+            }
+          }
         }
       }
     }
