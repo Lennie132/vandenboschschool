@@ -29,10 +29,13 @@
 ========================================================================== */
 html {
   font-size: 62.5%;
-  @media (max-width: 1670px) {
+  @media (max-width: 1800px) {
+    font-size: 55%;
+  }
+  @media (max-width: 1660px) {
     font-size: 50%;
   }
-  @media (max-width: 1415px) {
+  @media (max-width: 1515px) {
     font-size: 40%;
   }
   @media (max-width: 1199px) {
@@ -135,14 +138,12 @@ a {
       margin-bottom: 20px;
       .kalenderitem__datum {
         font-weight: bold;
-        color: @black-color;
       }
       .kalenderitem__tijd {
         font-weight: bold;
         margin-bottom: 0;
       }
       .kalenderitem__titel {
-        color: @black-color;
       }
     }
 
@@ -156,7 +157,6 @@ a {
       margin-bottom: 25px;
       .newsitem__title {
         font-weight: bold;
-        color: @black-color;
       }
       .newsitem__intro {
         height: 72px;
@@ -165,7 +165,6 @@ a {
         }
         .newsitem__read-more {
           font-weight: bold;
-          color: @black-color;
           span {
             &::before {
               display: inline-block;
