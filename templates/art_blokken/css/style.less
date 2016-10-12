@@ -19,196 +19,201 @@ Blokken op home-page
   padding-bottom: 30px;
   .block__wrapper {
     padding: 0;
-    // Blauwe achtergrond & Witte tekst
-    &.block--color-1 {
-      .block__content {
-        background-color: @kleur1;
-        a {
-          color: @white-color;
-        }
-        &.block__content--transparant {
-          background-color: rgba(14, 113, 184, 0.75);
-        }
-        .block__title {
-          color: @white-color;
-        }
-        .block__text, .block__module {
-          color: @white-color;
-          a {
-            color: @white-color;
-          }
-        }
-        .block__link {
-          color: @white-color;
-          border-color: @white-color;
-        }
+    .block__content {
+          padding: 20px;
+          text-align: center;
+      .block__icon {
+        margin: 10px 10px 15px 10px;
       }
-    }
-    // Roze achtergrond & Witte tekst
-    &.block--color-2 {
-      .block__content {
-        background-color: @kleur2;
-        a {
-          color: @white-color;
-        }
-        &.block__content--transparant {
-          background-color: rgba(230, 24, 115, 0.75);
-        }
-        .block__title {
-          color: @white-color;
-        }
-        .block__text, .block__module {
-          color: @white-color;
-          a {
-            color: @white-color;
-          }
-        }
-        .block__link {
-          color: @white-color;
-          border-color: @white-color;
-        }
+      .block__title {
+        font-weight: bold;
+        font-size: 3.6rem;
+        line-height: 4rem;
+        margin: 10px 0 15px;
       }
-    }
-    // Turquoise achtergrond & Witte tekst
-    &.block--color-3 {
-      .block__content {
-        background-color: @kleur3;
-        a {
-          color: @white-color;
-        }
-        &.block__content--transparant {
-          background-color: rgba(18, 161, 154, 0.75);
-        }
-        .block__title {
-          color: @white-color;
-        }
-        .block__text, .block__module {
-          color: @white-color;
-          a {
-            color: @white-color;
-          }
-        }
-        .block__link {
-          color: @white-color;
-          border-color: @white-color;
-        }
+      .block__text {
+        font-size: 20px;
+        line-height: 24px;
       }
-    }
-    // Witte achtergrond & Blauwe tekst
-    &.block--color-4 {
-      .block__content {
-        background-color: @white-color;
-        a {
-          color: @kleur1;
-        }
-        &.block__content--transparant {
-          background-color: @white-color;
-        }
-        .block__title {
-          color: @kleur1;
-        }
-        .block__text, .block__module {
-          color: @black-color;
-          a {
-            color: @black-color;
+      .block__link {
+        display: block;
+        margin-top: 20px;
+        padding-top: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        span {
+          &::before {
+            display: inline-block;
+            font-size: 18px;
+            line-height: 23px;
+            vertical-align: bottom;
           }
         }
-        .block__link {
-          color: @kleur1;
-          border-color: @kleur1;
-        }
-      }
-    }
-    // Witte achtergrond & Roze tekst
-    &.block--color-5 {
-      .block__content {
-        background-color: @white-color;
-        a {
-          color: @kleur2;
-        }
-        &.block__content--transparant {
-          background-color: @white-color;
-        }
-        .block__title {
-          color: @kleur2;
-        }
-        .block__text, .block__module {
-          color: @black-color;
-          a {
-            color: @black-color;
-          }
-        }
-        .block__link {
-          color: @kleur2;
-          border-color: @kleur2;
-        }
-      }
-    }
-    // Witte achtergrond & Turquoise tekst
-    &.block--color-6 {
-      .block__content {
-        background-color: @white-color;
-        a {
-          color: @kleur3;
-        }
-        &.block__content--transparant {
-          background-color: @white-color;
-        }
-        .block__title {
-          color: @kleur3;
-        }
-        .block__tex, .block__module {
-          color: @black-color;
-          a {
-            color: @black-color;
-          }
-        }
-        .block__link {
-          color: @kleur3;
-          border-color: @kleur3;
+        &.block__link--border-top {
+          border-top-style: solid;
+          border-top-width: 2px;
         }
       }
     }
   }
 }
+
+// Blauwe achtergrond & Witte tekst
+.block--color-1 {
+  .block__content {
+    background-color: @kleur1;
+    a {
+      color: @white-color;
+    }
+    &.block__content--transparant {
+      background-color: rgba(14, 113, 184, 0.75);
+    }
+    .block__title {
+      color: @white-color;
+    }
+    .block__text, .block__module {
+      color: @white-color;
+      a {
+        color: @white-color;
+      }
+    }
+    .block__link {
+      color: @white-color;
+      border-color: @white-color;
+    }
+  }
+}
+// Roze achtergrond & Witte tekst
+.block--color-2 {
+  .block__content {
+    background-color: @kleur2;
+    a {
+      color: @white-color;
+    }
+    &.block__content--transparant {
+      background-color: rgba(230, 24, 115, 0.75);
+    }
+    .block__title {
+      color: @white-color;
+    }
+    .block__text, .block__module {
+      color: @white-color;
+      a {
+        color: @white-color;
+      }
+    }
+    .block__link {
+      color: @white-color;
+      border-color: @white-color;
+    }
+  }
+}
+// Turquoise achtergrond & Witte tekst
+.block--color-3 {
+  .block__content {
+    background-color: @kleur3;
+    a {
+      color: @white-color;
+    }
+    &.block__content--transparant {
+      background-color: rgba(18, 161, 154, 0.75);
+    }
+    .block__title {
+      color: @white-color;
+    }
+    .block__text, .block__module {
+      color: @white-color;
+      a {
+        color: @white-color;
+      }
+    }
+    .block__link {
+      color: @white-color;
+      border-color: @white-color;
+    }
+  }
+}
+// Witte achtergrond & Blauwe tekst
+.block--color-4 {
+  .block__content {
+    background-color: @white-color;
+    a {
+      color: @kleur1;
+    }
+    &.block__content--transparant {
+      background-color: @white-color;
+    }
+    .block__title {
+      color: @kleur1;
+    }
+    .block__text, .block__module {
+      color: @black-color;
+      a {
+        color: @black-color;
+      }
+    }
+    .block__link {
+      color: @kleur1;
+      border-color: @kleur1;
+    }
+  }
+}
+// Witte achtergrond & Roze tekst
+.block--color-5 {
+  .block__content {
+    background-color: @white-color;
+    a {
+      color: @kleur2;
+    }
+    &.block__content--transparant {
+      background-color: @white-color;
+    }
+    .block__title {
+      color: @kleur2;
+    }
+    .block__text, .block__module {
+      color: @black-color;
+      a {
+        color: @black-color;
+      }
+    }
+    .block__link {
+      color: @kleur2;
+      border-color: @kleur2;
+    }
+  }
+}
+// Witte achtergrond & Turquoise tekst
+.block--color-6 {
+  .block__content {
+    background-color: @white-color;
+    a {
+      color: @kleur3;
+    }
+    &.block__content--transparant {
+      background-color: @white-color;
+    }
+    .block__title {
+      color: @kleur3;
+    }
+    .block__tex, .block__module {
+      color: @black-color;
+      a {
+        color: @black-color;
+      }
+    }
+    .block__link {
+      color: @kleur3;
+      border-color: @kleur3;
+    }
+  }
+}
+
 // Tekst (Optioneel: Icon)
 .block--style-1 {
   .block__content {
-    padding: 20px;
-    text-align: center;
-    .block__icon {
-      margin: 10px 10px 15px 10px;
-    }
-    .block__title {
-      font-weight: bold;
-      font-size: 3.6rem;
-      line-height: 4rem;
-      margin: 0 0 15px 0;
-    }
-    .block__text {
-      font-size: 20px;
-      line-height: 24px;
-    }
-    .block__link {
-      display: block;
-      margin-top: 20px;
-      padding-top: 10px;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 24px;
-      span {
-        &::before {
-          display: inline-block;
-          font-size: 18px;
-          line-height: 23px;
-          vertical-align: bottom;
-        }
-      }
-      &.block__link--border-top {
-        border-top-style: solid;
-        border-top-width: 2px;
-      }
-    }
+
   }
 }
 
@@ -221,41 +226,6 @@ Blokken op home-page
   }
   .block__content {
     position: relative;
-    padding: 20px;
-    text-align: center;
-    .block__icon {
-      margin: 10px 10px 15px 10px;
-    }
-    .block__title {
-      font-weight: bold;
-      font-size: 3.6rem;
-      line-height: 4rem;
-      margin: 10px 0;
-    }
-    .block__text {
-      font-size: 20px;
-      line-height: 24px;
-    }
-    .block__link {
-      display: block;
-      margin-top: 20px;
-      padding-top: 10px;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 24px;
-      span {
-        &::before {
-          display: inline-block;
-          font-size: 18px;
-          line-height: 23px;
-          vertical-align: bottom;
-        }
-      }
-      &.block__link--border-top {
-        border-top-style: solid;
-        border-top-width: 2px;
-      }
-    }
   }
   &.block--small {
     .block__image {
@@ -282,46 +252,12 @@ Blokken op home-page
   }
   .block__content {
     position: absolute;
-    padding: 35px 20px;
-    bottom: 0;
     width: 100%;
-    text-align: center;
-    .block__icon {
-      margin: 10px 10px 15px 10px;
-    }
-    .block__title {
-      font-weight: bold;
-      font-size: 3.6rem;
-      line-height: 4rem;
-      margin: 0 0 15px 0;
-    }
-    .block__text {
-      font-size: 20px;
-      line-height: 24px;
-    }
-    .block__link {
-      display: block;
-      margin-top: 20px;
-      padding-top: 10px;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 24px;
-      span {
-        &::before {
-          display: inline-block;
-          font-size: 18px;
-          line-height: 23px;
-          vertical-align: bottom;
-        }
-      }
-      &.block__link--border-top {
-        border-top-style: solid;
-        border-top-width: 2px;
-      }
-    }
+    bottom: 0;
+    padding: 35px 20px;
   }
   &.block--small {
-    height: 115px;
+    height: 400px;
   }
   &.block--large {
     height: 520px;
