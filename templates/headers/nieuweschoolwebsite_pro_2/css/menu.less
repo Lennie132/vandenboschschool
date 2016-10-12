@@ -13,14 +13,28 @@ Menu
     position: relative;
     padding: 0 15px;
     .transition(all 0.3s);
-    transition: all 0.3s;
 
+    &.active {
+      > a {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
     > a {
       color: @black-color;
       font-size: 30px;
       line-height: 34px;
-      &:hover, &:focus, &:active {
-        text-decoration: none;
+    }
+
+    &:focus,
+    &:hover {
+      > a {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      > ul {
+        display: block;
       }
     }
 
@@ -31,22 +45,9 @@ Menu
       line-height: 34px;
       right: -5px;
     }
-
     &:last-child {
       &::after {
         content: "";
-      }
-    }
-
-    &:focus,
-    &:hover {
-      > a {
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      > ul {
-        display: block;
       }
     }
 
@@ -101,7 +102,7 @@ Menu
       padding: 7px 30px;
       border-top: 2px solid @kleur1;
       &:last-child {
-          border-bottom: 2px solid @kleur1;
+        border-bottom: 2px solid @kleur1;
       }
       > a {
         display: block;
@@ -180,6 +181,12 @@ Menu
 /* ==========================================================================
 Menu responsive
 ========================================================================== */
-@media (max-width: 1199px) {}
-  @media (max-width: 991px) {}
-    @media (max-width: 767px) {}
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {
+
+}
+@media (max-width: 767px) {
+
+}
