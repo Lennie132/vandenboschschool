@@ -63,6 +63,7 @@ header {
 
         .main-block__search {
           display: inline-block;
+          float: right;
           .main-block__search-form {
             position: relative;
             padding: 5px;
@@ -70,16 +71,46 @@ header {
 
             .main-block__search-icon {
               position: absolute;
+              padding: 0;
               left: 5px;
+              border: none;
+              background-color: transparent;
             }
             .main-block__search-input {
               margin-left: 25px;
               width: auto;
-              max-width: 100px;
+              max-width: 130px;
               border: none;
               font-size: 16px;
               line-height: 20px;
               color: @kleur1;
+            }
+          }
+        }
+        @media (max-width: 480px) {
+          text-align: center;
+          .main-block__phone-number {
+            display: block;
+          }
+          .main-block__search {
+            margin-top: 10px;
+            float: none;
+            .main-block__search-form {
+              .main-block__search-input {
+                max-width: 150px;
+              }
+            }
+          }
+        }
+        @media (min-width: 991px) and (max-width: 1199px) {
+          text-align: center;
+          .main-block__search {
+            margin-top: 10px;
+            float: none;
+            .main-block__search-form {
+              .main-block__search-input {
+                max-width: 150px;
+              }
             }
           }
         }

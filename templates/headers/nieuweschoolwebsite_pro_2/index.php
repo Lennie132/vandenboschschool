@@ -1,4 +1,5 @@
 <?php
+global $DATA;
 lcms_client_script::add_header_css('/css/header.less');
 lcms_client_script::add_header_css('/css/menu.less');
 lcms_client_script::add_header_js('/js/main.js');
@@ -20,7 +21,7 @@ lcms_client_script::add_header_js('/js/main.js');
   <div class="grid-sizer"></div>
 
   <!-- Standaard blok dat altijd linksboven staat -->
-  <div class="main-block grid-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+  <div class="main-block grid-item col-lg-4 col-md-4 col-sm-12 col-xs-12 <?= (get_variabele('page_home') == $DATA['page']) ? '' : 'main-block--scroll' ; ?>">
     <div class="main-block__wrapper">
       <div class="main-block__content">
         <div class="main-block__top-wrapper">
@@ -29,11 +30,11 @@ lcms_client_script::add_header_js('/js/main.js');
             <a href="tel:<?= get_variabele('telefoonnummer'); ?>"><?= get_variabele('telefoonnummer'); ?></a>
           </div>
 
-          <div class="main-block__search pull-right">
+          <div class="main-block__search">
             <form class="main-block__search-form" action="<?= link::v('page_zoekresultaten') ?>" method="get">
-              <label class="main-block__search-icon" for="zoekopdracht"><img src="img/icon-zoek.png" alt="icon-zoek"/></label>
+              <button class="main-block__search-icon" type="submit"><img src="img/icon-zoek.png" alt="icon-zoek"/></button>
               <input class="main-block__search-input" type="text" id="zoekopdracht" name="zoekopdracht" placeholder="zoeken..."/>
-              <button class="main-block__search-button" type="submit">zoek</button>
+
             </form>
           </div>
         </div>
