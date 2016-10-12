@@ -29,9 +29,7 @@ if (is_array($groepen) && count($groepen) > 0) {
             $newGroepID = sql::$last_insert_id;
             $addGroepTaal = sql::save_data("INSERT INTO `artikel_groeptalen` SET `group_id` = '".$newGroepID."', `lang` = 'NL', `group_name` = '".$groep."'");
             
-            
             $gewicht++;
         }
     }
 }
-?>
