@@ -39,7 +39,7 @@ class bestandenmodule {
                 if ($groepid > 0) {
                     $absolute_parent = $groepid;
                     $getParentID = artikel_groep::get_parent($groepid);
-                    $groepenArrs = artikelen::get_artikel_groepen_arr($getParentID);
+                    $groepenArrs = artikelen::get_artikel_groepen_arr($getParentID, 'g.gewicht ASC');
                     $afbeelding = get_art_file_path($groepenArrs[$groepid]['groepartikelen']['achtergrond_afbeelding']['DATA'], $groepenArrs[$groepid]['groepartikel_id']);
                     if (trim($afbeelding) != '')
                         break;
@@ -95,17 +95,6 @@ class bestandenmodule {
             return true;
         }
         return false;
-    }
-
-}
-
-class bestandenmoduleHTML {
-
-    public static function getFileHTML($file = 0) {
-
-        $html = ob_get_clean();
-        ob_end_flush();
-        return $html;
     }
 
 }

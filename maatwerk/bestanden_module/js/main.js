@@ -1,31 +1,31 @@
 /**
- * CUSTOM MAATWERK
- */
+* CUSTOM MAATWERK
+*/
 
-$(window).load(function () {
+$(document).ready(function(){
+  /**
+  * Blokken passend maken
+  * Masonry
+  */
+  $(window).load(function() {
     $('.isotope-folders').isotope({
-        itemSelector: '.isotope-folder',
-        resizable: true,
-        masonry: {
-            gutter: 0,
-            isFitWidth: true,
-        }
+      itemSelector: '.isotope--folder',
+      resizable: true,
+      masonry: {
+        gutter: 0,
+        isFitWidth: true,
+      }
     });
 
     $('.isotope-files').isotope({
-        itemSelector: '.isotope-file',
-        resizable: true,
-        masonry: {
-            gutter: 0,
-            isFitWidth: true,
-        }
+      itemSelector: '.isotope--file',
+      resizable: true,
+      masonry: {
+        gutter: 0,
+        isFitWidth: true,
+      }
     });
 
-    $('.tilecontainer').addClass('loaded');
-
-    var tilesElement = $('.tilecontainer');
-    $('.tile').on('click', function () {
-       tilesElement.fadeOut(500);
-    });
-
+    $('.files-wrapper').addClass('files-wrapper--loaded');
+  });
 });
