@@ -17,47 +17,96 @@ Blokken op home-page
 
 .block {
   padding-bottom: 30px;
-  .block__wrapper {
-    padding: 0;
-    .block__content {
-          padding: 20px;
-          text-align: center;
-      .block__icon {
-        margin: 10px 10px 15px 10px;
-      }
-      .block__title {
-        font-weight: bold;
-        font-size: 3.6rem;
-        line-height: 4rem;
-        margin: 10px 0 15px;
-      }
-      .block__text {
-        font-size: 20px;
-        line-height: 24px;
-      }
-      .block__link {
-        display: block;
-        margin-top: 20px;
-        padding-top: 10px;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 24px;
-        span {
-          &::before {
-            display: inline-block;
-            font-size: 18px;
-            line-height: 23px;
-            vertical-align: bottom;
-          }
+
+}
+
+// Standaard blok
+.block__wrapper {
+  padding: 0;
+  .block__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .block__content {
+    padding: 20px;
+    text-align: center;
+    .block__icon {
+      margin: 10px 10px 15px 10px;
+    }
+    .block__title {
+      font-weight: bold;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      margin: 10px 0 15px;
+    }
+    .block__text {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    .block__link {
+      display: block;
+      margin-top: 20px;
+      padding-top: 10px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      span {
+        &::before {
+          display: inline-block;
+          font-size: 18px;
+          line-height: 23px;
+          vertical-align: bottom;
         }
-        &.block__link--border-top {
-          border-top-style: solid;
-          border-top-width: 2px;
-        }
+      }
+      &.block__link--border-top {
+        border-top-style: solid;
+        border-top-width: 2px;
       }
     }
   }
+
+  &.block--small {
+    .block__image {
+      height: 295px;
+    }
+  }
+  &.block--large {
+    .block__image {
+      height: 405px;
+    }
+  }
 }
+
+// Style voor transparante content bij afbeelding
+.block--transparant-color {
+  position: relative;
+  .block__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .block__content {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 35px 20px;
+  }
+  
+  &.block--small {
+    height: 400px;
+    .block__image {
+      height: 400px;
+    }
+  }
+  &.block--large {
+    height: 520px;
+    .block__image {
+      height: 520px;
+    }
+  }
+}
+
 
 // Blauwe achtergrond & Witte tekst
 .block--color-1 {
@@ -210,56 +259,4 @@ Blokken op home-page
   }
 }
 
-// Tekst (Optioneel: Icon)
-.block--style-1 {
-  .block__content {
 
-  }
-}
-
-// Afbeelding en tekst
-.block--style-2 {
-  .block__image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .block__content {
-    position: relative;
-  }
-  &.block--small {
-    .block__image {
-      height: 295px;
-    }
-  }
-  &.block--large {
-    .block__image {
-      height: 405px;
-    }
-  }
-}
-
-// Afbeelding en transparant tekst
-.block--style-3 {
-  position: relative;
-  .block__image {
-    position: absolute;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-  }
-  .block__content {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    padding: 35px 20px;
-  }
-  &.block--small {
-    height: 400px;
-  }
-  &.block--large {
-    height: 520px;
-  }
-}
