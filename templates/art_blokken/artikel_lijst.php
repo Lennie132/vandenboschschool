@@ -35,12 +35,37 @@
           break;
       }
 
-      if ($artikel['blok_transparante_kleur'] == 1 && $img != '') {
-        $classes_block = 'block--transparant-color'; // Voor de andere layout
-        $classes_content = 'block__content--transparant'; // Voor de transparante achtergrondkleur
-      } else {
-        $classes_block = "";
-        $classes_content = "";
+      $classes_block = "";
+      $classes_content = "";
+
+      if ($artikel['inhoud_transparant_achtergrond'] == 1 && $img != '') {
+        $classes_block .= ' block--transparant-color'; // Voor de andere layout
+        $classes_content .= ' block__content--transparant'; // Voor de transparante achtergrondkleur
+      }
+
+      switch ($artikel['inhoud_uitlijning']) {
+        case "left":
+          $classes_content .= ' block__content--align-left';
+          break;
+        case "center":
+          $classes_content .= ' block__content--align-center';
+          break;
+        case "right":
+          $classes_content .= ' block__content--align-right';
+          break;
+      }
+
+
+      switch ($artikel['icon_positie']) {
+        case "top":
+          $classes_content .= ' block__content--icon-top';
+          break;
+        case "left_title":
+          $classes_content .= ' block__content--icon-left-title';
+          break;
+        case "left_content":
+          $classes_content .= ' block__content--icon-left-content';
+          break;
       }
       ?>
 
@@ -55,7 +80,7 @@
 
           <div class="block__content <?= $classes_content; ?>">
 
-            <a href="<?= link::c($artikel['link']); ?>">
+            <a class="block__link-wrapper" href="<?= link::c($artikel['link']); ?>">
 
               <?php if ($artikel['icon_toon'] == 1 && $icon != '') { ?>
                 <img class="block__icon" src="<?= lcms::resize($icon, 60, 60, '', 80); ?>" title="<?= $artikel['titel']; ?>">

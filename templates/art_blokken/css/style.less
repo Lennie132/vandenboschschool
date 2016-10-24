@@ -30,7 +30,52 @@ Blokken op home-page
   }
   .block__content {
     padding: 20px;
-    text-align: center;
+    &.block__content--align-left {
+      text-align: left;
+    }
+    &.block__content--align-center {
+      text-align: center;
+    }
+    &.block__content--align-right {
+      text-align: right;
+    }
+
+    &.block__content--icon-left-title {
+      .block__link-wrapper {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      .block__icon {
+        display: inline-block;
+        margin: 10px 20px 15px 10px;
+      }
+      .block__title {
+        display: inline-block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &.block__content--icon-left-content {
+      .block__link-wrapper {
+        display: inline-block;
+        vertical-align: top;
+        width: 15%;
+        .block__icon {
+          margin: 0;
+          padding: 21px 0 15px 0;
+        }
+
+      }
+      .block__text {
+        display: inline-block;
+        width: 83%;
+        padding-left: 10px;
+      }
+    }
+
     .block__icon {
       margin: 10px 10px 15px 10px;
     }
@@ -92,7 +137,7 @@ Blokken op home-page
     bottom: 0;
     padding: 35px 20px;
   }
-  
+
   &.block--small {
     height: 400px;
     .block__image {
