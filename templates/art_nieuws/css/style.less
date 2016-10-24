@@ -23,7 +23,7 @@
 .news-items {
   .news-item {
     .news-item__title {
-
+      color: @kleur3;
     }
     .news-item__date {
       font-size: 14px;
@@ -32,9 +32,8 @@
       margin-bottom: 10px;
     }
     .news-item__read-more {
-      position: relative;
-      display: table;
-      margin-top: 20px;
+      font-weight: bold;
+      color:@kleur3;
     }
     .news-item__image {
       max-width: 100%;
@@ -43,10 +42,13 @@
       display: inline-block;
       vertical-align: middle;
     }
+    hr {
+      border-color: @kleur2;
+    }
   }
 }
 
-.news-item__wrapper--small {
+.news-item__wrapper--page-group {
   margin-bottom: 20px;
   .news-item__title {
     margin-top: 0;
@@ -57,17 +59,17 @@
     .news-item__paragraph {
       line-height: 24px;
     }
-    .news-item__read-more {
-      font-weight: bold;
-      span {
-        &::before {
-          display: inline-block;
-          font-size: 17px;
-          line-height: 24px;
-          vertical-align: top;
-        }
+  }
+  .news-item__read-more {
+    font-weight: bold;
+    color: @kleur3;
+    span {
+      &::before {
+        display: inline-block;
+        font-size: 17px;
+        line-height: 24px;
+        vertical-align: top;
       }
-
     }
   }
   .news-item__image {
@@ -75,28 +77,48 @@
   }
 }
 
-.news-detail {
-    .news-detail__title {
+.news-item__wrapper--small {
+  .news-item__title {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  .news-item__read-more {
+    display: inline-block;
+    font-weight: bold;
+    color: @kleur3;
+    span {
+      &::before {
+        display: inline-block;
+        font-size: 17px;
+        line-height: 24px;
+        vertical-align: top;
+      }
+    }
+  }
+}
 
-    }
-    .news-detail__date {
-      font-size: 14px;
-      line-height: 16px;
-      color: #8c8c8c;
-      margin-bottom: 10px;
-    }
-    .news-detail__image {
-      max-width: 100%;
-    }
-    .news-detail__back-link {
-      position: relative;
-      display: table;
-      margin-top: 20px;
-    }
-    [class^="icon-"], [class*=" icon-"] {
-      display: inline-block;
-      vertical-align: middle;
-    }
+.news-detail {
+  .news-detail__title {
+    color:@kleur3;
+  }
+  .news-detail__date {
+    font-size: 14px;
+    line-height: 16px;
+    color: #8c8c8c;
+    margin-bottom: 10px;
+  }
+  .news-detail__image {
+    max-width: 100%;
+  }
+  .news-detail__back-link {
+    position: relative;
+    display: table;
+    margin-top: 20px;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 .news-pagination {

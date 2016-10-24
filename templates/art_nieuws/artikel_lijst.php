@@ -4,26 +4,29 @@
   smart_include_js('main.js');
 
   $config = array(
-      'tabelnaam' => $tabelnaam,
+      'tabelnaam' => 'art_nieuws',
       'group_id' => $DATA['group'],
       'order' => 't.datum DESC', // bv: RAND()
       'artikel_id' => 0,
-      'limit_links' => 10,
+      'limit_links' => 0,
       'where' => ''
   );
-  
+
   if ($DATA['page'] != get_variabele('page_nieuws')) {
     $config['limit_links'] = 4;
   }
-  
+  if ($DATA['page'] == get_variabele('page_home')) {
+    $config['limit_links'] = 3;
+  }
 
   /* Artikelen ophalen */
-  $art_arr = get_artikelen_arr($config['tabelnaam'], $config['group_id'], $config['order'], $config['artikel_id'], $config['limit_links'], $config['where']);
+  $news_arr = get_artikelen_arr($config['tabelnaam'], $config['group_id'], $config['order'], $config['artikel_id'], $config['limit_links'], $config['where']);
+  $news_count = get_artikelen_arr($config['tabelnaam'], $config['group_id'], $config['order'], $config['artikel_id'], 0, $config['where']);
 
-  if (!empty($art_arr)) {
+  if (!empty($news_arr)) {
     ?>
 
-    <?php if ($DATA['page'] != get_variabele('page_nieuws')) { ?>
+    <?php if ($DATA['page'] != get_variabele('page_nieuws') && $DATA['page'] != get_variabele('page_home')) { ?>
       <div class="row">
         <div class="news-groupname">
           <div class="col-xs-12">
@@ -37,43 +40,54 @@
       <div class="news-items">
         <?php
         $tel = 1;
-        foreach ($art_arr as $key => $artikel) {
-          $img = get_art_file_path($artikel['Afbeelding'], $artikel['artikel_id']);
-          $oldDate = $artikel['Datum'];
+        foreach ($news_arr as $key => $nieuwsitem) {
+          $img = get_art_file_path($nieuwsitem['Afbeelding'], $nieuwsitem['artikel_id']);
+          $oldDate = $nieuwsitem['Datum'];
           $newDate = date("d-m-Y", strtotime($oldDate));
 
           if ($DATA['page'] == get_variabele('page_nieuws')) {
-            include dirname(__FILE__) . '/artikel_lijst_default.php';
+            if ($tel <= 3) {
+              include dirname(__FILE__) . '/lijst_item_default.php';
+            } else {
+              include dirname(__FILE__) . '/lijst_item_small.php';
+            }
+          } elseif ($DATA['page'] == get_variabele('page_home')) {
+            include dirname(__FILE__) . '/lijst_item_page_home.php';
           } else {
-
-            include dirname(__FILE__) . '/artikel_lijst_small.php';
+            include dirname(__FILE__) . '/lijst_item_page_group.php';
           }
-          ?>
 
-          <?php
           if ($tel % 2 == 0) {
             ?>
             <div class="clearfix hidden-xs hidden-sm"></div>
             <?php
           }
           $tel++;
-          ?>
-        <?php } ?>
+        }
+        ?>
       </div>
     </div>
 
-    <?php if (count($art_arr) > 10) { ?>
-      <div class="row">
-        <div class="news-pagination">
-          <div class="col-xs-12">
-            <?php
-            limit_links('', true);
-            clear_limit();
-            ?>
+    <?php
+    if ($DATA['page'] != get_variabele('page_home')) {
+      if ($config['limit_links'] != 0) {
+        if (count($news_count) > $config['limit_links']) {
+          ?>
+          <div class="row">
+            <div class="news-pagination">
+              <div class="col-xs-12">
+                <?php
+                limit_links('', true);
+                clear_limit();
+                ?>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    <?php } ?>
+          <?php
+        }
+      }
+    }
+    ?>
 
     <?php
   } else {
