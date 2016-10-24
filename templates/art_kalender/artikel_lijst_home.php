@@ -17,10 +17,10 @@ if (!empty($agenda_arr)) {
     $oldSdate = date("j-n-Y", strtotime($agendaitem['Startdatum']));
     $newSdate = explode('-', $oldSdate);
     ?>
-    <div class="kalenderitem--home">
-      <a class="kalenderitem__datum" href="<?= link::v('page_agenda')->artikel_groep($agendaitem['page'])->artikel_id($agendaitem['artikel_id']); ?>"><?= $newSdate[0] . ' ' . maandnaam($newSdate[1]) . ' ' . $newSdate[2]; ?></a>
-      <p class="kalenderitem__tijd"><?= $agendaitem['Starttijd']; ?> <?= get_vertaling('uur'); ?></p>
-      <a class="kalenderitem__titel" href="<?= link::v('page_agenda')->artikel_groep($agendaitem['page'])->artikel_id($agendaitem['artikel_id']); ?>"><?= $agendaitem['Titel']; ?></a>
+    <div class="kalender-item--home">
+      <a class="kalender-item__datum" href="<?= link::v('page_agenda')->artikel_groep($agendaitem['page'])->artikel_id($agendaitem['artikel_id']); ?>"><?= $newSdate[0] . ' ' . maandnaam($newSdate[1]) . ' ' . $newSdate[2]; ?></a>
+      <p class="kalender-item__tijd"><?= $agendaitem['Starttijd']; ?> <?= get_vertaling('uur'); ?></p>
+      <a class="kalender-item__titel" href="<?= link::v('page_agenda')->artikel_groep($agendaitem['page'])->artikel_id($agendaitem['artikel_id']); ?>"><?= $agendaitem['Titel']; ?></a>
     </div>
     <?php
     $DATA['group'] = '';
