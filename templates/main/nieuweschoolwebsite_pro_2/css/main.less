@@ -121,6 +121,13 @@ Content
   background-color: @white-color;
   padding: 20px;
 
+  h2 {
+    color: @kleur3;
+  }
+  h3 {
+    color: lighten(@kleur3, 5%);
+  }
+
   table {
     width: 100%;
     td {
@@ -138,19 +145,19 @@ Content
 /* ==========================================================================
 Kalender Home
 ========================================================================== */
-.kalenderitem--home {
+.kalender-item--home {
   text-align: left;
   font-size: 18px;
   line-height: 22px;
   margin-bottom: 20px;
-  .kalenderitem__datum {
+  .kalender-item__datum {
     font-weight: bold;
   }
-  .kalenderitem__tijd {
+  .kalender-item__tijd {
     font-weight: bold;
     margin-bottom: 0;
   }
-  .kalenderitem__titel {
+  .kalender-item__titel {
   }
 }
 
