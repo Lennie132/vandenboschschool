@@ -37,21 +37,17 @@ if (!empty($art_arr)) {  ?>
           <div class="team-member" style="background-image:url('<?php echo lcms::resize($afbeelding, 300, null, "300x300"); ?>');">
             <div class="team-member__overflow team-member--has-animation" data-animation="fade-in" data-delay="300">
               <div class="team-member__info">
-                <a href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= $artikel['naam']; ?>">
+                <a class="team-member__link-wrapper" href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= $artikel['naam']; ?>">
                   <h4 class="team-member__name"><?php echo $artikel["naam"]; ?></h4>
                   <p class="team-member__function"><?php echo $artikel["functie"]; ?></p>
                 </a>
                 <p class="team-member__description"><?php echo $artikel["omschrijving"]; ?></p>
                 <?php if ($artikel['email'] != '') { ?>
-                  <a class="team-member__email" href="mailto:<?= $artikel['email']; ?>" title="<?= $artikel['email']; ?>">
-                    <span class="icon-email"></span> <?= $artikel['email']; ?>
-                  </a>
+                  <a class="team-member__email" href="mailto:<?= $artikel['email']; ?>" title="<?= $artikel['email']; ?>"><span class="icon-email"></span><?= $artikel['email']; ?></a>
                   <br/>
                   <?php } ?>
                   <?php if ($artikel['telefoon'] != '') { ?>
-                    <a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']; ?>" title="<?= $artikel['telefoon']; ?>">
-                      <span class="icon-phone"></span> <?= $artikel['telefoon']; ?>
-                    </a>
+                    <a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']; ?>" title="<?= $artikel['telefoon']; ?>"><span class="icon-phone"></span><?= $artikel['telefoon']; ?></a>
                     <?php } ?>
                     <br/>
                     <a class="team-member__link" href="<?= link::c($DATA['page'])->artikel_groep($artikel['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= get_vertaling('lees_meer'); ?>">

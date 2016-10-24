@@ -25,7 +25,7 @@ if (!empty($artikel)) {
         <div class="row">
             <div class="col-xs-12">
                 <div class="team-member__link">
-                    <a href="<?= link::v('page_team'); ?>"><span class="icon-chevron_left"></span> <?= get_vertaling('terug'); ?></a>
+                    <a href="<?= link::v('page_team'); ?>"><span class="icon-chevron_left"></span><?= get_vertaling('terug'); ?></a>
                 </div>
             </div>
         </div>
@@ -44,10 +44,10 @@ if (!empty($artikel)) {
                 <h2 class="team-member__name"><?= $artikel['naam']['DATA']; ?></h2>
                 <p class="team-member__function"><?= $artikel['functie']['DATA']; ?></p>
                 <?php if ($artikel['email']['DATA'] != '') { ?>
-                    <p><a class="team-member__email" href="mailto:<?= $artikel['email']['DATA']; ?>"><span class="icon-email"></span>&nbsp;<?= $artikel['email']['DATA']; ?></a></p>
+                    <p><a class="team-member__email" href="mailto:<?= $artikel['email']['DATA']; ?>"><span class="icon-email"></span><?= $artikel['email']['DATA']; ?></a></p>
                 <?php } ?>
                 <?php if ($artikel['telefoon']['DATA'] != '') { ?>
-                    <p><a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']['DATA']; ?>"><span class="icon-phone"></span>&nbsp;<?= $artikel['telefoon']['DATA']; ?></a></p>
+                    <p><a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']['DATA']; ?>"><span class="icon-phone"></span><?= $artikel['telefoon']['DATA']; ?></a></p>
                 <?php } ?>
                 <br/>
                 <p class="team-member__description"><?= $artikel['omschrijving']['DATA']; ?></p>
