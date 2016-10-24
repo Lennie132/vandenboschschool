@@ -69,150 +69,163 @@ Algemeen
 ========================================================================== */
 a {
   &:focus,
-  &:hover {}
+    &:hover {}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+/* ==========================================================================
+Sfeerbeeld
+========================================================================== */
+.content__sfeerbeeld {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+/* ==========================================================================
+Titel
+========================================================================== */
+.content__titel-wrapper {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: @kleur1;
+  .content__titel {
+    text-align: center;
+    margin: 0;
+    color: @white-color;
+
+  }
+  &.content__titel-wrapper--overlay {
+    background-color: rgba(14, 113, 184, 0.75);
+    position: absolute;
+    bottom: 0;
+  }
+}
+/* ==========================================================================
+Content
+========================================================================== */
+.content {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+
+.content__main {
+  background-color: @white-color;
+  padding: 20px;
+
+  table {
+    width: 100%;
+    td {
+      padding: 6px;
+    }
+  }
+}
+
+.content__bottom-bar {
+  background-color: @kleur2;
+  height: 30px;
+  width: 100%;
+}
+
+/* ==========================================================================
+Kalender Home
+========================================================================== */
+.kalenderitem--home {
+  text-align: left;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 20px;
+  .kalenderitem__datum {
+    font-weight: bold;
+  }
+  .kalenderitem__tijd {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  .kalenderitem__titel {
+  }
+}
+
+/* ==========================================================================
+Nieuws Home
+========================================================================== */
+.news-item__wrapper--home {
+  text-align: left;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 25px;
+  .news-item__title {
+    font-weight: bold;
+  }
+  .news-item__intro {
+    height: 72px;
+    .newsitem__paragraph {
+      line-height: 24px;
+    }
+    .news-item__read-more {
+      font-weight: bold;
+      span {
+        &::before {
+          display: inline-block;
+          font-size: 17px;
+          line-height: 24px;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+Formulier
+========================================================================== */
+form {
+  .formulier_div {
+    label {}
+
+    input,
+    textarea {}
+
+    textarea {}
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {}
-    /* ==========================================================================
-    Sfeerbeeld
-    ========================================================================== */
-    .content__sfeerbeeld {
-      position: relative;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 500px;
-    }
-    /* ==========================================================================
-    Titel
-    ========================================================================== */
-    .content__titel-wrapper {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      background-color: @kleur1;
-      .content__titel {
-        text-align: center;
-        margin: 0;
-        color: @white-color;
+  .formulier_div_submit {
+    input {}
+  }
+}
+/* Placeholder */
+::-webkit-input-placeholder {
+  color: @kleur1;
+}
 
-      }
-      &.content__titel-wrapper--overlay {
-        background-color: rgba(14, 113, 184, 0.75);
-        position: absolute;
-        bottom: 0;
-      }
-    }
-    /* ==========================================================================
-    Content
-    ========================================================================== */
-    .content {
-      font-size: 18px;
-      line-height: 22px;
-          margin-bottom: 30px;
-    }
+:-moz-placeholder {
+  color: @kleur1;
+}
 
-    .content__main {
-      background-color: @white-color;
-      padding: 20px;
-    }
+::-moz-placeholder {
+  color: @kleur1;
+}
 
-    .content__bottom-bar {
-      background-color: @kleur2;
-      height: 30px;
-      width: 100%;
-    }
+:-ms-input-placeholder {
+  color: @kleur1;
+}
+/* ==========================================================================
+RESPONSIVE
+========================================================================== */
+@media (max-width: 1199px) {
 
-    /* ==========================================================================
-    Kalender Home
-    ========================================================================== */
-    .kalenderitem--home {
-      text-align: left;
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 20px;
-      .kalenderitem__datum {
-        font-weight: bold;
-      }
-      .kalenderitem__tijd {
-        font-weight: bold;
-        margin-bottom: 0;
-      }
-      .kalenderitem__titel {
-      }
-    }
+}
+@media (max-width: 991px) {
 
-    /* ==========================================================================
-    Nieuws Home
-    ========================================================================== */
-    .newsitem__wrapper--home {
-      text-align: left;
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 25px;
-      .newsitem__title {
-        font-weight: bold;
-      }
-      .newsitem__intro {
-        height: 72px;
-        .newsitem__paragraph {
-          line-height: 24px;
-        }
-        .newsitem__read-more {
-          font-weight: bold;
-          span {
-            &::before {
-              display: inline-block;
-              font-size: 17px;
-              line-height: 24px;
-              vertical-align: top;
-            }
-          }
-        }
-      }
-    }
+}
+@media (max-width: 767px) {
 
-    /* ==========================================================================
-    Formulier
-    ========================================================================== */
-    form {
-      .formulier_div {
-        label {}
-
-          input,
-          textarea {}
-
-            textarea {}
-            }
-
-            .formulier_div_submit {
-              input {}
-              }
-            }
-            /* Placeholder */
-            ::-webkit-input-placeholder {
-              color: @kleur1;
-            }
-
-            :-moz-placeholder {
-              color: @kleur1;
-            }
-
-            ::-moz-placeholder {
-              color: @kleur1;
-            }
-
-            :-ms-input-placeholder {
-              color: @kleur1;
-            }
-            /* ==========================================================================
-            RESPONSIVE
-            ========================================================================== */
-            @media (max-width: 1199px) {}
-              @media (max-width: 991px) {}
-                @media (max-width: 767px) {}
+}
