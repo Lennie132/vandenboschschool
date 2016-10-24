@@ -32,7 +32,7 @@ if (!empty($art_arr)) {  ?>
         }
         //Hier module inhoud:
         ?>
-        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
           <!-- Team Member -->
           <div class="team-member" style="background-image:url('<?php echo lcms::resize($afbeelding, 300, null, "300x300"); ?>');">
             <div class="team-member__overflow team-member--has-animation" data-animation="fade-in" data-delay="300">
