@@ -22,16 +22,16 @@
       switch ($artikel['blok_grootte']) {
         case '1':
           $height = 'block--small';
-          $col = 'col-lg-2 col-md-4 col-sm-6 col-xs-12';
+          $col = 'col-lg-2 col-sm-6 col-xs-12';
           break;
         case '2':
           $height = 'block--large';
-          $col = 'col-lg-4 col-md-6 col-sm-6 col-xs-12';
+          $col = 'col-lg-4 col-sm-6 col-xs-12';
           break;
 
         default:
           $height = 'block--small';
-          $col = 'col-lg-2 col-md-4 col-sm-6 col-xs-12';
+          $col = 'col-lg-2 col-sm-6 col-xs-12';
           break;
       }
 

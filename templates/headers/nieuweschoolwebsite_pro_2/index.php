@@ -21,7 +21,7 @@ lcms_client_script::add_header_js('/js/main.js');
   <div class="grid-sizer"></div>
 
   <!-- Standaard blok dat altijd linksboven staat -->
-  <div class="main-block grid-item col-lg-4 col-md-4 col-sm-12 col-xs-12 <?= (get_variabele('page_home') == $DATA['page']) ? '' : 'main-block--scroll' ; ?>">
+  <div class="main-block grid-item col-lg-4 col-sm-12 col-xs-12 <?= (get_variabele('page_home') == $DATA['page']) ? 'col-md-6' : 'main-block--scroll col-md-4' ; ?>">
     <div class="main-block__wrapper">
       <div class="main-block__content">
         <div class="main-block__top-wrapper">
