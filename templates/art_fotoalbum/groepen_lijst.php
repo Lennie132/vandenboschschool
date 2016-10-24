@@ -36,11 +36,11 @@
           $subgroepen_arr = get_artikel_groepen_arr($groep['group_id']);
 
           if (!empty($art_arr) || !empty($subgroepen_arr)) {
-
+            $class = "";
             if (trim($images[1]['path']) != '') {
               $src = $images[1]['path'];
             } else {
-              $src = "img/fotoalbum-no-preview.jpg";
+              $src = "img/default-fotoalbum-no-preview.jpg";
               $class = "gallery-item__preview--no-image";
             }
             ?>
