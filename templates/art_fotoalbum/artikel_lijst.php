@@ -16,8 +16,12 @@
   //--- Artikelen ophalen van de groep
   $art_arr = get_artikelen_arr($config['tabelnaam'], $config['group_id'], $config['order'], $config['artikel_id'], $config['limit_links'], $config['where']);
 
-  //--- Groepnaam ophalen
-  $groepnaam = get_groepnaam($DATA['group']);
+  //--- Groepnaam ophalen of standaard term gebruiken
+    if ($DATA['page'] == get_variabele('page_fotoalbum')) {
+        $groepnaam = get_groepnaam($DATA['group']);
+    } else {
+      $groepnaam = get_vertaling('fotos');
+    }
 
   if (!empty($art_arr)) {
     ?>
@@ -32,6 +36,7 @@
       <div class="gallery-items">
 
         <?php
+        $tel = 1;
         foreach ($art_arr as $artikel) {
 
           $images = get_art_multi_files($artikel['afbeeldingen'], $artikel['artikel_id'], $DATA['m']);
@@ -39,8 +44,8 @@
           foreach ($images as $key => $image) {
             if (trim($image['path']) != '') {
               ?>
-              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="gallery-item">
+              <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="gallery-item__preview">
 
                   <a class="fancybox" rel="<?= $artikel['group_id']; ?>" href="<?= lcms::resize($image['path'], 1400, 1200, '', 80); ?>" title="<?= $artikel['titel']; ?>">
                     <img src="<?= lcms::resize($image['path'], 480, 320, '480x320', 80); ?>" class="img-responsive" alt="<?= $artikel['titel']; ?>">
@@ -52,6 +57,25 @@
                 </div>
               </div>
               <?php
+              if ($tel % 4 == 0) {
+                ?>
+                <div class="clearfix hidden-xs hidden-sm hidden-md"></div>
+                <?php
+              }
+              if ($tel % 3 == 0) {
+                ?>
+                <div class="clearfix hidden-xs hidden-sm hidden-lg"></div>
+                <?php
+              }
+              if ($tel % 2 == 0) {
+                ?>
+                <div class="clearfix hidden-xs hidden-md hidden-lg"></div>
+                <?php
+              }
+              $tel++;
+              ?>
+
+              <?php
             }
           }
         }
@@ -62,4 +86,3 @@
     //--- Clear groep
     $DATA['group'] = '';
   }
-?>

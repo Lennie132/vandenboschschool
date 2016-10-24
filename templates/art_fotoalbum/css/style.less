@@ -24,27 +24,36 @@ Gallery
   }
 }
 
+.gallery-breadcrumbs {
+  margin-bottom: 15px;
+}
+
 .gallery-groups {
-  list-style: none;
-  padding: 0;
   .gallery-group {
-    .gallery-group__title {
+    margin-bottom: 20px;
+    .gallery-group__link {
       color: @kleur2;
+      .gallery-group__title {
+        color: @kleur2;
+        margin-top: 5px;
+      }
     }
   }
 }
 
-.gallery__items {
-
+.gallery-items {
+  .gallery-item {
+    margin-bottom: 20px;
+  }
 }
 
-.gallery-item {
+.gallery-item__preview {
   position: relative;
-  margin-bottom: 20px;
-  a{
+  a {
     display: block;
     img {
       margin: 0;
+      width: 100%;
     }
   }
   .gallery-item__overlay {
@@ -64,9 +73,7 @@ Gallery
       .transition(all .5s);
     }
   }
-  .gallery-item__overlay--stock {
-
-  }
+ 
   &:hover {
     .gallery-item__overlay {
       opacity: 1;
@@ -81,7 +88,7 @@ Gallery
   }
 }
 
-.gallery-item--no-image {
+.gallery-item__preview--no-image {
   .gallery-item__overlay {
     opacity: 1;
     top: 0;
