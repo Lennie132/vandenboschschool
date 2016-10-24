@@ -11,9 +11,9 @@ $(document).ready(function(){
       percentPosition: true
     });
 
-    $('.newsitem__intro').dotdotdot({
+    $('.news-item__intro').dotdotdot({
       watch: "window",
-      after: "a.newsitem__read-more"
+      after: ".news-item__read-more"
     });
   });
 });
