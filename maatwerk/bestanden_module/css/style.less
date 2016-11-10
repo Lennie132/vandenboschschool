@@ -1,11 +1,7 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-Created on : 20-apr-2015, 15:05:02
-Author     : Michael
+Created on : 20-apr-2015
+Added on   : 9-nov-2016
+Author     : Michael / Lennart
 */
 .transition(@secs) {
   transition-duration: @secs;
@@ -25,6 +21,7 @@ Author     : Michael
 
 .isotope {
   padding: 15px;
+  display: inline-block;
   .isotope__link-wrapper {
     display: block;
     position: relative;
@@ -32,34 +29,39 @@ Author     : Michael
     width: 150px;
     padding: 10px;
     border-radius: 15px;
-    border: fade(#333, 65%);
-    .transition(0.5s);
-    cursor: pointer;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(63, 63, 63, 0.75);
-    -moz-box-shadow:    2px 2px 5px 0px rgba(63, 63, 63, 0.75);
-    box-shadow:         2px 2px 5px 0px rgba(63, 63, 63, 0.75);
+    .transition(0.3s);
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(63, 63, 63, 0.75);
+    -moz-box-shadow:    2px 2px 3px 0px rgba(63, 63, 63, 0.75);
+    box-shadow:         2px 2px 3px 0px rgba(63, 63, 63, 0.75);
     .isotope__name {
       position: absolute;
       left: 0px;
       right: 0px;
-      bottom: 12px;
-      background: fade(#333, 65%);
-      color: #FFF;
-      display: block;
+      bottom: 17px;
+      background: fade(#333, 55%);
+      color: #ffffff;
       padding: 2px 5px;
-      font-size: 12px;
+      font-size: 17px;
       text-align: center;
     }
-
-
-
+    .isotope__label {
+      opacity: 0;
+    }
     &:hover {
       transform: scale(1.1);
-
-    }
-    &.file{
-      .download-file{
-
+      z-index: 100;
+      .isotope__label {
+        opacity: 1;
+        position: absolute;
+        left: 115px;
+        top: -20px;
+        padding: 8px;
+        border: 1px solid @kleur3;
+        background-color: #ffffff;
+        color: @kleur3;
+        cursor: pointer;
+        z-index: 100;
+        .transition(0.3s);
       }
     }
   }
@@ -67,75 +69,23 @@ Author     : Michael
 
 .isotope--file {
   .isotope__link-wrapper {
-    background-color: #D2AE60;
+    background-color: #90A4AE;
     background-size: 70px, cover;
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat;
     background-position: center 10px, top center;
-    .isotope__download {
-      opacity: 0;
-      max-height: 999px;
-      visibility: visible;
-    }
-    &:hover {
-      .isotope__download {
-        opacity: 1;
-
-        position: absolute;
-        right: 0;
-        margin-right: -140px;
-        white-space: nowrap;
-        top: -44px;
-        background: #FFF;
-        color: #333;
-        padding: 8px;
-        border: 1px solid black;
-        border-radius: 10px;
-        opacity: 0;
-        .transition(1s);
-        max-height: 0px;
-        visibility: hidden;
-        &:before{
-          content: "";
-          border: 0px solid #FFFFFF;
-          border-color: rgba(136,183,213,0);
-          border-right-color: #FFFFFF;
-          border-width: 21px;
-          margin-top: 4px;
-          position: absolute;
-          left: 0px;
-          transform: rotate(-155deg);
-          z-index: -1;
-        }
-      }
-    }
-  }
-}
-
-.folder-return {
-  padding: 15px 0;
-  font-size: 16px;
-  font-weight:bold;
-  color: #868686;
-  .folder-return__icon {
-    vertical-align: middle;
-    display: inline-block;
-    margin-right: 5px;
   }
 }
 
 .paginatie{
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 0;
   a{
     display: inline-block;
     padding: 5px 10px;
-    background: url('maatwerk/bestanden_module/img/tile-overlay.png') center top #cc0000;
-    background-color: red;
-    background-size: cover;
-    color: #FFF;
-    border-radius: 5px;
+    background-color: @kleur3;
+    color: #ffffff;
     text-decoration: none;
-    opacity: 0.3;
+    opacity: 0.5;
     &.activeLimitLink, &:hover{
       opacity: 1;
     }

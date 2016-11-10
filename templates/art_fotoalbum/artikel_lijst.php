@@ -1,10 +1,10 @@
 <?php
   smart_include_css('css/style.less');
-  smart_include_css('fonts/fonts.css');
+  smart_include_css('css/style.css');
   smart_include_js('main.js');
 
   $config = array(
-      'tabelnaam' => $tabelnaam,
+      'tabelnaam' => 'art_fotoalbum',
       'group_id' => $DATA['group'],
       'order' => 'a.gewicht ASC', // bv: RAND()
       'artikel_id' => 0,
@@ -13,76 +13,88 @@
       'module' => 0,
   );
 
-  //--- Artikelen ophalen van de groep
+//--- Groepen ophalen
   $art_arr = get_artikelen_arr($config['tabelnaam'], $config['group_id'], $config['order'], $config['artikel_id'], $config['limit_links'], $config['where']);
-
-  //--- Groepnaam ophalen of standaard term gebruiken
-    if ($DATA['page'] == get_variabele('page_fotoalbum')) {
-        $groepnaam = get_groepnaam($DATA['group']);
-    } else {
-      $groepnaam = get_vertaling('fotos');
-    }
 
   if (!empty($art_arr)) {
     ?>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <h2 class="album"><?= $groepnaam; ?></h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="gallery-items">
-
+    <section class="mod_fotoalbum">
+      <div class="gallery-wrapper">
         <?php
-        $tel = 1;
-        foreach ($art_arr as $artikel) {
-
-          $images = get_art_multi_files($artikel['afbeeldingen'], $artikel['artikel_id'], $DATA['m']);
-          //--- Afbeelding niet leeg
-          foreach ($images as $key => $image) {
-            if (trim($image['path']) != '') {
+        if ($DATA['page'] == get_variabele('page_home')) {
+          foreach ($art_arr as $artikel) {
+            $img = get_art_file_path($artikel['hoofdafbeelding'], $artikel['artikel_id']);
+            if (trim($img) != '') {
               ?>
-              <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="gallery-item__preview">
-
-                  <a class="fancybox" rel="<?= $artikel['group_id']; ?>" href="<?= lcms::resize($image['path'], 1400, 1200, '', 80); ?>" title="<?= $artikel['titel']; ?>">
-                    <img src="<?= lcms::resize($image['path'], 480, 320, '480x320', 80); ?>" class="img-responsive" alt="<?= $artikel['titel']; ?>">
-                    <div class="gallery-item__overlay">
-                      <span class="gallery-item__icon icon-search"></span>
-                    </div>
-                  </a>
-
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="row">
+                  <div class="fotos-wrapper">
+                    <figure>
+                      <img class="img-responsive" src="<?= lcms::resize($img, 481, 400, '481x400'); ?>" title="<?= $artikel['titel']; ?>" alt="<?= $artikel['titel']; ?>">
+                    </figure>
+                  </div>
                 </div>
               </div>
               <?php
-              if ($tel % 4 == 0) {
-                ?>
-                <div class="clearfix hidden-xs hidden-sm hidden-md"></div>
-                <?php
-              }
-              if ($tel % 3 == 0) {
-                ?>
-                <div class="clearfix hidden-xs hidden-sm hidden-lg"></div>
-                <?php
-              }
-              if ($tel % 2 == 0) {
-                ?>
-                <div class="clearfix hidden-xs hidden-md hidden-lg"></div>
-                <?php
-              }
-              $tel++;
-              ?>
-
-              <?php
             }
           }
+        } else {
+          ?>
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 class="gallery-wrapper__title"><?= get_vertaling('fotoalbums'); ?></h2>
+            </div>
+          </div>
+          <div class="row">
+            <?php
+            $cfHelper = 1;
+            foreach ($art_arr as $artikel) {
+
+              $img = get_art_file_path($artikel['hoofdafbeelding'], $artikel['artikel_id']);
+              if ($img == '') {
+                $img = 'img/default-fotoalbum-placeholder.png';
+              }
+
+              if (trim($img) != '') {
+                ?>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="gallery-item">
+                    <a href="<?= $DATA['page'] == get_variabele('page_fotoalbum') ? link::c($DATA['page'])->artikel_groep($DATA['group'])->artikel_id($artikel['artikel_id']) : link::c($DATA['page'])->artikel_id($artikel['artikel_id']); ?>" title="<?= $artikel['titel']; ?>">
+                      <img class="img-responsive" src="<?= lcms::resize($img, 320, 213, '320x213', 80); ?>" alt="<?= $artikel['titel']; ?>" />
+                      <div class="image-overlay">
+                        <span class="icon icon-link"></span>
+                      </div>
+                    </a>
+                    <div class="gallery-title">
+                      <?= $artikel['titel']; ?>
+                    </div>
+                  </div>
+                </div>
+                <?php
+              }
+              if ($cfHelper % 4 == 0) {
+                ?><div class="clearfix visible-lg"></div><?php
+              }
+              if ($cfHelper % 3 == 0) {
+                ?><div class="clearfix visible-md"></div><?php
+              }
+              if ($cfHelper % 2 == 0) {
+                ?><div class="clearfix visible-sm"></div><?php
+                }
+                $cfHelper++;
+              }
+              ?>
+          </div>
+          <?php
         }
         ?>
+
       </div>
-    </div>
+    </section>
+
     <?php
-    //--- Clear groep
-    $DATA['group'] = '';
   }
+
+  $DATA['group'] = '';
+?>
+  

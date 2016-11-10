@@ -13,7 +13,7 @@ $(document).ready(function(){
       resizable: true,
       masonry: {
         gutter: 0,
-        isFitWidth: true,
+        isFitWidth: true
       }
     });
 
@@ -22,7 +22,7 @@ $(document).ready(function(){
       resizable: true,
       masonry: {
         gutter: 0,
-        isFitWidth: true,
+        isFitWidth: true
       }
     });
 
