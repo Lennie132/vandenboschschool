@@ -12,11 +12,16 @@
       'where' => ''
   );
 
-  if ($DATA['page'] != get_variabele('page_nieuws')) {
-    $config['limit_links'] = 4;
+  if ($DATA['page'] == get_variabele('page_nieuws')) {
+    $config['limit_links'] = 15;
+    $config['group_id'] = array(42, 44);
   }
   if ($DATA['page'] == get_variabele('page_home')) {
     $config['limit_links'] = 3;
+    $config['group_id'] = array(42, 44);
+  }
+  if ($DATA['page'] != get_variabele('page_nieuws') && $DATA['page'] != get_variabele('page_home')) {
+    $config['limit_links'] = 4;
   }
 
   /* Artikelen ophalen */
@@ -70,8 +75,7 @@
 
     <?php
     if ($DATA['page'] != get_variabele('page_home')) {
-      if ($config['limit_links'] != 0) {
-        if (count($news_count) > $config['limit_links']) {
+        if (count($news_count) > $config['limit_links'] && $config['limit_links'] != 0) {
           ?>
           <div class="row">
             <div class="news-pagination">
@@ -85,7 +89,6 @@
           </div>
           <?php
         }
-      }
     }
     ?>
 

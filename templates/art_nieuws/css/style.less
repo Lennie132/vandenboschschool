@@ -122,8 +122,19 @@
 }
 
 .news-pagination {
-  margin:5px 0;
-  text-align:center;
+  text-align: center;
+  margin: 20px 0 0;
+  a{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: @kleur3;
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.5;
+    &.activeLimitLink, &:hover{
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 767px) {
