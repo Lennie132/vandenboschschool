@@ -7,7 +7,6 @@ lcms_client_script::add_header_js('/js/main.js');
 
 <header>
   <div class="header-wrapper">
-    <?php  //lcms::Menu()->setNiveausDiep(2)->setClass('main-nav list-unstyled')->getHTML(); ?>
     <div class="menu-button">
       <span class="icon-menu"></span>
     </div>

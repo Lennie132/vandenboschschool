@@ -1,3 +1,6 @@
+//De breedte van het scherm (in px) waarbij het menu moet omschakelen naar mobiele versie
+var collapseAtWidth = 770;
+
 $(document).ready(function(){
   checkResponsiveMenu();
 
@@ -56,7 +59,7 @@ $(document).ready(function(){
 */
 function checkResponsiveMenu() {
   //if ($('.menu').width() >= $('.header-wrapper').width()) {
-  if ($(window).width() <= 767) {
+  if ($(window).width() <= collapseAtWidth) {
     $('.menu-button').removeClass('menu-button--hidden');
     $('.header-wrapper').addClass('header-wrapper--responsive');
     $('.menu').addClass('menu--responsive');
