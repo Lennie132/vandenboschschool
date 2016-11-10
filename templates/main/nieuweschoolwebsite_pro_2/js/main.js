@@ -1,9 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function () {
   /**
-  * Blokken passend maken
-  * Masonry
-  */
-  $(window).load(function() {
+   * Blokken passend maken
+   * Masonry
+   */
+  $(window).load(function () {
     $('.grid').masonry({
       // options
       itemSelector: '.grid-item',
@@ -15,5 +15,7 @@ $(document).ready(function(){
       watch: "window",
       after: ".news-item__read-more"
     });
+
+    $('[data-toggle="tooltip"]').tooltip();
   });
 });

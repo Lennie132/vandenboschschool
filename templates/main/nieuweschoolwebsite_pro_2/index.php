@@ -38,6 +38,7 @@
         /** add_main_js is een shortcut naar het pad /templates/main/templatenaam/ * */
         lcms_client_script::add_main_js('js/modernizr-2.6.2.min.js');
         lcms_client_script::add_main_js('js/jquery.dotdotdot.min.js');
+        lcms_client_script::add_main_js('js/jquery-tooltip.js', true);
 
         /** custom LESS inladen * */
         //lcms_client_script::add_less('js/style.less', true);
