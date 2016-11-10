@@ -193,18 +193,173 @@ Nieuws Home
 /* ==========================================================================
 Formulier
 ========================================================================== */
-form {
+form{
   .formulier_div {
-    label {}
+    margin-bottom: 10px;
+    width: 100%;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    &.hoofdkop {
+      padding-top: 20px;
+      span {
+        color: @kleur2;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+    &.tussenkop {
+      span {
+        color: @kleur2;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    label{
+      font-weight: bold;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 0;
+      float: left;
+      width: 30%;
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    input, textarea{
+      display: block;
+      padding: 5px 8px;
+      font-size: 20px;
+      line-height: 24px;
+      color: #55595c;
+      background-color: #fff;
+      background-image: none;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 4px;
+      float: left;
+      width: 50%;
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .formulier_radio, .formulier_check {
+      margin-left: 30%;
+      width: 100%;
+      height: auto;
+      float: left;
+      > input {
+        width: 20px;
+        margin-top: 12px;
+      }
+      > label {
+        width: auto;
+      }
+    }
+    textarea{
+      height: 150px;
+    }
+    .form_tooltip {
+      float: left;
+      margin: 0 0 0 10px;
+      padding: 8px 12px;
+      background-color: @kleur2;
 
-    input,
-    textarea {}
+      font-size: 24px;
+      font-weight: bold;
+      color: @white-color;
 
-    textarea {}
+      border-radius: 16px;
+      cursor: pointer;
+    }
+    .tooltip {
+      position: absolute;
+      display: inline-block;
+      padding-bottom: 6px;
+      .tooltip-inner {
+        position: relative;
+        padding: 10px;
+        background-color: @black-color;
+        color: white;
+        font-size: 12px;
+        border-radius: 5px;
+      }
+
+    }
   }
+  .formulier_div_submit{
+    input{
+      background-color: @kleur3;
+      color: @white-color;
+      display: inline-block;
+      font-weight: 400;
+      line-height: 25px;
+      border: 1px solid transparent;
+      padding: 5px 10px;
+      font-size: 20px;
+      border-radius: 5px;
+      margin-left: 30%;
+    }
+  }
+}
 
-  .formulier_div_submit {
-    input {}
+.formulier_verzonden {
+  color: @kleur2;
+}
+
+
+@media (max-width: 991px) {
+  form{
+    .formulier_div{
+      label{
+        width: 33.33333333%;
+      }
+      input, textarea{
+        width: 50%;
+      }
+      .formulier_radio, .formulier_check {
+        margin-left: 33.33333333%;
+      }
+      textarea{
+
+      }
+    }
+    .formulier_div_submit{
+      input{
+        margin-left: 33.33333333%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  form{
+    .formulier_div{
+      label{
+        width: 100%;
+        padding-left: 0;
+
+      }
+      input, textarea{
+        width: 100%;
+      }
+      .formulier_radio, .formulier_check {
+        margin-left: 5%;
+      }
+      textarea{
+
+      }
+    }
+    .formulier_div_submit{
+      input{
+        margin-left: 0;
+      }
+    }
   }
 }
 /* Placeholder */
