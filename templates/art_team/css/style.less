@@ -49,7 +49,6 @@ Module Team
     &:hover {
       .team-member__info {
         margin-top: 0px;
-        /*padding:20px;*/
       }
       .team-member__overflow {
         margin: 0px;
@@ -64,13 +63,17 @@ Module Team
     .team-member__link-wrapper {
       color: @white-color;
       .team-member__name {
+        height: 18px;
+        margin-top: 16px;
+        margin-bottom: 2px;
+        padding: 0 5px;
         color: @white-color;
         font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 2px;
+        font-size: 17px;
         text-transform: uppercase;
       }
       .team-member__function {
+        height: 20px;
         margin-bottom: 30px;
         font-size: 16px;
         line-height: 20px;
@@ -82,21 +85,8 @@ Module Team
       padding: 0 20px;
       font-size: 18px;
       line-height: 30px;
-      height: 90px;
+      height: 120px;
       color: @white-color;
-    }
-    .team-member__telefoon {
-      font-size: 16px;
-      line-height: 22px;
-      color: @white-color;
-      &:hover {
-        color: @white-color;
-      }
-      span {
-        display: inline-block;
-        margin-right: 5px;
-        vertical-align: middle;
-      }
     }
     .team-member__email {
       font-size: 16px;
@@ -153,15 +143,6 @@ Module Team
       vertical-align: middle;
     }
   }
-  .team-member__telefoon {
-    font-size: 16px;
-    line-height: 22px;
-    span {
-      display: inline-block;
-      margin-right: 5px;
-      vertical-align: middle;
-    }
-  }
   .team-member__link {
     font-size: 16px;
     line-height: 22px;
@@ -170,8 +151,6 @@ Module Team
       line-height: 20px;
       display: inline-block;
       vertical-align: middle;
-    }
-    &:hover {
     }
   }
 }

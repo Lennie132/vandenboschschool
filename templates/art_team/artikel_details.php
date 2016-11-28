@@ -5,12 +5,7 @@ $config = array(
     'order' => 'a.gewicht ASC', // bv: RAND()
     'artikel_id' => $DATA['artikel_id'],
     'limit_links' => 0,
-    'where' => '',
-    'module' => 0,
-    'class' => '',
-    'afbeelding_veld' => 'Afbeelding',
-    'album_veld' => 'Album',
-    'bestand_veld' => 'Bestand'
+    'where' => ''
 );
 
 smart_include_css('css/style.less');
@@ -45,9 +40,6 @@ if (!empty($artikel)) {
                 <p class="team-member__function"><?= $artikel['functie']['DATA']; ?></p>
                 <?php if ($artikel['email']['DATA'] != '') { ?>
                     <p><a class="team-member__email" href="mailto:<?= $artikel['email']['DATA']; ?>"><span class="icon-email"></span><?= $artikel['email']['DATA']; ?></a></p>
-                <?php } ?>
-                <?php if ($artikel['telefoon']['DATA'] != '') { ?>
-                    <p><a class="team-member__telefoon" href="tel:<?= $artikel['telefoon']['DATA']; ?>"><span class="icon-phone"></span><?= $artikel['telefoon']['DATA']; ?></a></p>
                 <?php } ?>
                 <br/>
                 <p class="team-member__description"><?= $artikel['omschrijving']['DATA']; ?></p>
