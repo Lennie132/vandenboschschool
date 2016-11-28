@@ -1,6 +1,6 @@
 <?php
 $TEMPLATE = new PageTemplate(dirname(__FILE__));
-//$TEMPLATE->setDefault(true); 					//is dit de default template?
+$TEMPLATE->setDefault(true); 					//is dit de default template?
 //$TEMPLATE->setName('Een template naam');		//standaard wordt de template vernoemd naar de map waar deze in zit. Maar je kan dat overschrijven.		
 
 if($TEMPLATE->loadGrid('grid.php')){ //Indien grid bestand aanwezig dan inladen, anders de template configuren met onderstaande methode.	
