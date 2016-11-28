@@ -16,7 +16,7 @@
 ?>
 <div class="grid-item content col-md-8 col-xs-12">
 
-  <div class="content__sfeerbeeld" style="background-image: url('<?= lcms::resize($src, 1250, 500, '', 80); ?>');">
+  <div class="content__sfeerbeeld" style="background-image: url('<?= lcms::resize($src, 1250, 9999, '', 80); ?>');">
     <div class="content__titel-wrapper content__titel-wrapper--overlay">
       <h1 class="content__titel"><?= get_pagina_title($pageid) ?></h1>
     </div>
