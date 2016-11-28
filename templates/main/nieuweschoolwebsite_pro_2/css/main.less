@@ -119,6 +119,10 @@ Content
 .content__main {
   background-color: @white-color;
   padding: 20px;
+  img {
+    max-width: 100%;
+    height: auto!important;
+  }
 
   h2 {
     color: @kleur3;
@@ -217,88 +221,90 @@ form{
         font-weight: bold;
       }
     }
-    label {
+    > .form-label {
       float: left;
       width: 30%;
       padding: 5px 5px 5px 10px;
       font-weight: bold;
     }
-    input, textarea, select, recaptcha {
-      width: 50%;
-      padding: 5px 10px;
-      font-size: 20px;
-      line-height: 24px;
-      border: 1px solid rgba(0,0,0,.15);
-      border-radius: 2px;
-    }
-    textarea {
-      max-width: 50%;
-      min-width: 50%;
-    }
-    .google-recaptcha {
-      display: inline-block;
-      width: 50%;
-    }
-    .formulier_radio, .formulier_check {
-      &:first-child {
-        margin-left: 0;
+    > .form-input {
+      input, textarea, select, recaptcha {
+        width: 50%;
+        padding: 5px 10px;
+        font-size: 20px;
+        line-height: 24px;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 2px;
       }
-      margin-left: 30%;
-      width: 50%;
-      height: auto;
-      float: left;
-      > input {
+      textarea {
+        max-width: 50%;
+        min-width: 50%;
+        height: 150px;
+      }
+      .google-recaptcha {
+        display: inline-block;
+        width: 50%;
+      }
+      .formulier_radio, .formulier_check {
+        &:first-child {
+          margin-left: 0;
+        }
+        margin-left: 30%;
+        width: 50%;
+        height: auto;
         float: left;
-        width: 20px;
-        margin-top: 10px;
+        > input {
+          float: left;
+          width: 20px;
+          margin-top: 10px;
+        }
+        > label {
+          width: ~'calc(100% - 20px)';
+          float: left;
+          padding: 5px 5px 5px 10px;
+        }
       }
-      > label {
-        width: auto;
+      .form_tooltip {
+        width: 36px;
+        margin: 0 0 0 10px;
+        padding: 3px 12px;
+        border-radius: 50%;
+        background-color: @kleur2;
+        color: @white-color;
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: bold;
+        cursor: pointer;
       }
-    }
-    textarea{
-      height: 150px;
-
-    }
-    .form_tooltip {
-      width: 36px;
-      margin: 0 0 0 10px;
-      padding: 3px 12px;
-      border-radius: 50%;
-      background-color: @kleur2;
-      color: @white-color;
-      font-size: 24px;
-      line-height: 30px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .tooltip {
-      position: absolute;
-      display: inline-block;
-      padding-bottom: 10px;
-      .tooltip-inner {
-        position: relative;
-        padding: 10px;
-        background-color: @black-color;
-        color: white;
-        font-size: 16px;
-        border-radius: 5px;
-        &::after {
-          top: 100%;
-          left: 50%;
-          border: solid transparent;
-          content: " ";
-          height: 0;
-          width: 0;
-          position: absolute;
-          pointer-events: none;
-          border-color: rgba(136, 183, 213, 0);
-          border-top-color: @black-color;
-          border-width: 8px;
-          margin-left: -8px;
+      .tooltip {
+        position: absolute;
+        display: inline-block;
+        padding-bottom: 10px;
+        .tooltip-inner {
+          position: relative;
+          padding: 10px;
+          background-color: @black-color;
+          color: white;
+          font-size: 16px;
+          border-radius: 5px;
+          &::after {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-top-color: @black-color;
+            border-width: 8px;
+            margin-left: -8px;
+          }
         }
       }
     }
+
   }
   .formulier_div_submit {
     input {
@@ -322,16 +328,18 @@ form{
 @media (max-width: 991px) {
   form {
     .formulier_div {
-      label{
+      > .form-label {
         width: 33.33333333%;
       }
-      input, textarea {
-      }
-      .formulier_radio, .formulier_check {
-        margin-left: 33.33333333%;
-      }
-      textarea {
+      > .form-input {
+        input, textarea {
+        }
+        .formulier_radio, .formulier_check {
+          margin-left: 33.33333333%;
+        }
+        textarea {
 
+        }
       }
     }
     .formulier_div_submit {
@@ -345,41 +353,43 @@ form{
 @media (max-width: 767px) {
   form {
     .formulier_div {
-      label {
+      > .form-label {
         width: 100%;
         padding-left: 0;
-
+        padding-right: 30px;
       }
-      input, textarea, select {
-        width: 100%;
-      }
-      textarea {
-        max-width: 100%;
-        min-width: 100%;
-      }
-      .formulier_radio, .formulier_check {
-        &:first-child {
-          margin-left: 5%;
+      > .form-input {
+        input, textarea, select {
+          width: 100%;
         }
-        margin-left: 5%;
-        width: 100%;
-      }
-      .form_tooltip {
-        position: absolute;
-        right: 40px;
-        width: 30px;
-        margin: 3px 0;
-        padding: 3px 10px;
-        font-size: 20px;
-        line-height: 24px;
-      }
-      .tooltip {
-        padding-bottom: 5px;
-        .tooltip-inner {
-          margin-right: 30px;
-          &::after {
-            border-width: 0;
-            margin-left: 0;
+        textarea {
+          max-width: 100%;
+          min-width: 100%;
+        }
+        .formulier_radio, .formulier_check {
+          &:first-child {
+            margin-left: 5%;
+          }
+          margin-left: 5%;
+          width: 100%;
+        }
+        .form_tooltip {
+          position: absolute;
+          right: 40px;
+          width: 30px;
+          margin: 3px 0;
+          padding: 3px 10px;
+          font-size: 20px;
+          line-height: 24px;
+        }
+        .tooltip {
+          padding-bottom: 5px;
+          .tooltip-inner {
+            margin-right: 30px;
+            &::after {
+              border-width: 0;
+              margin-left: 0;
+            }
           }
         }
       }

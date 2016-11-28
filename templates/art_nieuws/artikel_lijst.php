@@ -1,6 +1,5 @@
 <?php
   smart_include_css('css/style.less');
-  smart_include_css('css/style.css');
   smart_include_js('main.js');
 
   $config = array(
