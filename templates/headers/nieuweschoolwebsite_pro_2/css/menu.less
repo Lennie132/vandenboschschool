@@ -36,7 +36,6 @@ Menu
         font-weight: bold;
         text-decoration: underline;
       }
-
       > ul {
         display: block;
       }
@@ -64,7 +63,7 @@ Menu
 
       > li {
         display: block;
-        padding: 7px 15px;
+        padding: 5px 15px;
         border-top: 2px solid @kleur1;
         text-align: left;
         &:last-child {
@@ -74,8 +73,8 @@ Menu
           display: block;
           white-space: nowrap;
           color: @black-color;
-          font-size: 20px;
-          line-height: 20px;
+          font-size: 19px;
+          line-height: 19px;
 
           &:focus,
           &:hover {
@@ -112,11 +111,11 @@ Menu
       > a {
         display: block;
         color: @black-color;
-        &:hover, &:focus, &active {
+        &:hover, &:focus {
           text-decoration: none;
         }
       }
-      &:hover, &:focus, &active {
+      &:hover, &:focus {
         > ul {
           display: none;
         }
