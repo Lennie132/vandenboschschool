@@ -36,7 +36,7 @@
         ?>
         <div class="row">
           <div class="col-xs-12">
-            <?= lcms::Breadcrums()->setHomepage(get_absolute_parent($DATA['page']))->getHtml(); ?>
+            <?= lcms::Breadcrums()->setHomepage(get_variabele('page_bestandenmodule'))->setScheidingsTeken('<span class="icon-chevron_right breadcrumb"></span>')->getHtml(); ?>
           </div>
         </div>
         <?php
@@ -52,7 +52,7 @@
           <div class="isotope-wrapper isotope-folders col-xs-12">
             <?php foreach ($folders as $folder) { ?>
               <div class="isotope isotope--folder">
-                <a class="isotope__link-wrapper" href="<?= link::v('page_bestandenmodule')->artikel_groep($folder['group_id']); ?>" title="Open map" style="background: url('maatwerk/bestanden_module/img/tile-overlay.png') <?= '#' . $folder['groepartikelen']['kleur']['DATA'] ?>">
+                <a class="isotope__link-wrapper" href="<?= link::v('page_bestandenmodule')->artikel_groep($folder['group_id']); ?>" title="Open map" style="background: url('maatwerk/bestanden_module/img/tile-overlay.png') <?= $folder['groepartikelen']['kleur']['DATA'] ?>">
                   <span class="isotope__name"><?= $folder['group_name']; ?></span>
                   <label class="isotope__label visible-lg">open</label>
                 </a>
