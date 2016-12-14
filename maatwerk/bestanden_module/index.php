@@ -1,29 +1,26 @@
 <?php
-  //print_pre($DATA);
   include_once 'maatwerk/bestanden_module/bestandenmodule.class.php';
 
-  $useLogin = !get_variabele('voor_bezoekers');
-  $bestanden_module = new bestandenmodule(6, $DATA['group'], $useLogin);
+  $bestanden_module = new bestandenmodule(6, $DATA['group'], get_variabele('bestandenmodule_gebruik_login'));
 
-  if ($bestanden_module->checkLogin()) {
-    if (isset($DATA['gebruikersnaam']) && isset($DATA['wachtwoord'])) {
-
-      if (!$bestanden_module->doLogin($DATA['gebruikersnaam'], $DATA['wachtwoord'])) {
-        //Login incorrect
-        echo '<div class="alert alert-warning">Foutmelding: Login incorrect</div>';
-      }
-    }
-  }
   $files_limit = 18;
   $folders = $bestanden_module->getFolders();
   $files = $bestanden_module->getFiles($files_limit);
 
   if (isset($DATA['file']) && $DATA['file'] > 0) {
     $melding = $bestanden_module->downloadFile($DATA['file']); // Bestand downloaden
-    print_pre($melding);
     if ($melding != '') {
-      echo $melding;
+      ?>
+      <div class="alert alert-warning"><?= $melding; ?></div>
+      <?php
     }
+  }
+
+  if (isset($DATA['logout'])) {
+    unset($_SESSION['gebruiker']);
+    unset($_SESSION['ingelogd']);
+    redirect(lcms::Link(get_variabele('page_bestandenmodule')));
+    die();
   }
 ?>
 
@@ -31,17 +28,25 @@
 
   <?php
     if ($bestanden_module->checkLogin()) {
+      ?>
 
-      if ($DATA['group'] != "") {
-        ?>
-        <div class="row">
-          <div class="col-xs-12">
-            <?= lcms::Breadcrums()->setHomepage(get_variabele('page_bestandenmodule'))->setScheidingsTeken('<span class="icon-chevron_right breadcrumb"></span>')->getHtml(); ?>
-          </div>
+      <div class="row">
+
+        <div class="<?= $bestanden_module->getUseLogin() ? "col-xs-12 col-sm-8" : "col-xs-12" ?>">
+          <?= lcms::Breadcrumbs()->setHomepage(get_variabele('page_bestandenmodule'))->setScheidingsTeken('<span class="icon-chevron_right breadcrumb"></span>')->getHtml(); ?>
         </div>
-        <?php
-      }
 
+        <?php if ($bestanden_module->getUseLogin()) { ?>
+          <div class="col-xs-12 col-sm-4">
+            <form action="" method="post">
+              <button type="submit" name="logout" class="logout-button">Log uit</button>
+            </form>
+          </div>
+        <?php } ?>
+
+      </div>
+
+      <?php
       if (is_array($folders) && count($folders) > 0) {
         ?>
         <div class="row">
@@ -79,7 +84,6 @@
               $filepath = get_art_file_path($file['bestand'], $file['artikel_id'], 0, true);
               $fileInfo = pathinfo($filepath);
               $icon = bestandenmodule::getFileIcon($fileInfo['extension']);
-
               ?>
               <div class="isotope isotope--file">
                 <a class="isotope__link-wrapper" href="<?= $link; ?>" title="Download bestand" style="background-image: url('maatwerk/bestanden_module/img/<?= $icon; ?>') , url('maatwerk/bestanden_module/img/tile-overlay.png');">
