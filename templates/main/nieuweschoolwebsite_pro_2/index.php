@@ -27,6 +27,7 @@
         /** Dit zijn variables en mixins die iedere less bestand kan gebruiken * */
         lcms_client_script::base_less('css/bootstrap/variables.less', false);
         lcms_client_script::base_less('css/bootstrap/mixins.less', false);
+        lcms_client_script::base_less('css/assets.less', false);
         //lcms_client_script::base_less('client/template/custom/css/variables.less');
 
         /** add_main_less is een shortcut naar het pad /templates/main/templatenaam/ * */
