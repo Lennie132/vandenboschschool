@@ -8,7 +8,7 @@ Je kan per rij aangeven wat hiervan de titel is. Bijvoorbeeld: 'Slider row', of 
 De interne kolommen zijn de zogenaamde pagina secties. Hierin kan je content blokken stoppen in de pagina module. De tekst in de kolom bepaald de sectie naam.
 In het voorbeeld hieronder zie je ook hoe je een default sectie kan defineren en hoe je ervoor kan zorgen dat er 'autoblokken' worden aangelegd.
 -->
-<div class="container" lcms-grid="12">Standaard
+<div class="" lcms-grid="12">Standaard
     <div class="row">rij
         <div class="col-md-4" default="true" id="kolom_1">Kolom 1</div>
         <div class="col-md-4" id="kolom_2">Kolom 2</div>

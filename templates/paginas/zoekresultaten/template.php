@@ -23,10 +23,16 @@
   </div>
 
   <div class="content__main">
-    <?php
-      /** Hier wordt het grid met de content ingelezen * */
-      echo $this->buildHTMLgrid($DATA['page']);
-    ?>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <?php
+            /** Hier wordt het grid met de content ingelezen * */
+            echo get_all_content_html();
+          ?>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Roze bar onderin -->
